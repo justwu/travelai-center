@@ -3,31 +3,31 @@
 @tailwind utilities;
 
 :root {
-  --color-background: 247 253 255;
-  --color-foreground: 21 27 34;
-  --color-muted: 233 247 250;
-  --color-muted-foreground: 55 70 82;
-  --color-border: 190 224 230;
-  --color-line: 219 236 240;
-  --color-lake: 22 157 144;
-  --color-aqua: 33 140 224;
-  --color-terracotta: 237 128 82;
-  --color-gold: 240 183 64;
-  --color-iris: 126 112 217;
-  --color-ink: 21 27 34;
-  --color-risk: 176 83 92;
-  --color-warning: 191 135 38;
-  --color-panel: 255 255 255;
-  --color-mint: 223 250 244;
-  --color-peach: 255 232 222;
-  --color-sky: 223 244 255;
-  --color-butter: 255 244 205;
-  --body-gradient-a: rgba(48, 196, 180, 0.22);
-  --body-gradient-b: rgba(89, 160, 255, 0.22);
-  --body-gradient-c: rgba(255, 191, 79, 0.18);
-  --body-gradient-base-1: #f7fdff;
-  --body-gradient-base-2: #fffdf8;
-  --body-gradient-base-3: #efffff;
+  --color-background: 8 17 30;
+  --color-foreground: 224 239 255;
+  --color-muted: 22 39 59;
+  --color-muted-foreground: 159 179 202;
+  --color-border: 54 86 116;
+  --color-line: 31 55 80;
+  --color-lake: 77 211 225;
+  --color-aqua: 96 165 250;
+  --color-terracotta: 244 114 126;
+  --color-gold: 238 193 91;
+  --color-iris: 164 142 255;
+  --color-ink: 239 248 255;
+  --color-risk: 244 114 126;
+  --color-warning: 238 193 91;
+  --color-panel: 12 25 42;
+  --color-mint: 16 70 86;
+  --color-peach: 88 37 51;
+  --color-sky: 21 58 92;
+  --color-butter: 79 62 25;
+  --body-gradient-a: rgba(77, 211, 225, 0.16);
+  --body-gradient-b: rgba(96, 165, 250, 0.18);
+  --body-gradient-c: rgba(164, 142, 255, 0.12);
+  --body-gradient-base-1: #07111f;
+  --body-gradient-base-2: #0b1626;
+  --body-gradient-base-3: #101b2e;
   color: rgb(var(--color-foreground));
   background: rgb(var(--color-background));
   font-family: Inter, "SF Pro Display", "SF Pro Text", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
@@ -37,116 +37,116 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-:root[data-theme="sunrise"] {
-  --color-background: 253 251 245;
-  --color-foreground: 31 36 40;
-  --color-muted: 240 245 238;
-  --color-muted-foreground: 69 82 77;
-  --color-border: 215 226 216;
-  --color-line: 228 234 223;
-  --color-lake: 47 125 104;
-  --color-aqua: 61 134 166;
-  --color-terracotta: 201 120 69;
-  --color-gold: 196 154 66;
-  --color-iris: 120 111 159;
-  --color-ink: 31 36 40;
-  --color-risk: 168 91 88;
-  --color-warning: 185 139 47;
-  --color-panel: 255 255 255;
-  --color-mint: 232 244 236;
-  --color-peach: 248 235 223;
-  --color-sky: 232 242 246;
-  --color-butter: 247 240 216;
-  --body-gradient-a: rgba(196, 154, 66, 0.16);
-  --body-gradient-b: rgba(61, 134, 166, 0.13);
-  --body-gradient-c: rgba(47, 125, 104, 0.14);
-  --body-gradient-base-1: #fffdf8;
-  --body-gradient-base-2: #fbfaf6;
-  --body-gradient-base-3: #f1f8f2;
+:root[data-theme="aurora"] {
+  --color-background: 8 17 30;
+  --color-foreground: 224 239 255;
+  --color-muted: 22 39 59;
+  --color-muted-foreground: 159 179 202;
+  --color-border: 54 86 116;
+  --color-line: 31 55 80;
+  --color-lake: 77 211 225;
+  --color-aqua: 96 165 250;
+  --color-terracotta: 244 114 126;
+  --color-gold: 238 193 91;
+  --color-iris: 164 142 255;
+  --color-ink: 239 248 255;
+  --color-risk: 244 114 126;
+  --color-warning: 238 193 91;
+  --color-panel: 12 25 42;
+  --color-mint: 16 70 86;
+  --color-peach: 88 37 51;
+  --color-sky: 21 58 92;
+  --color-butter: 79 62 25;
+  --body-gradient-a: rgba(77, 211, 225, 0.16);
+  --body-gradient-b: rgba(96, 165, 250, 0.18);
+  --body-gradient-c: rgba(164, 142, 255, 0.12);
+  --body-gradient-base-1: #07111f;
+  --body-gradient-base-2: #0b1626;
+  --body-gradient-base-3: #101b2e;
 }
 
-:root[data-theme="cyber"] {
-  --color-background: 247 253 255;
-  --color-foreground: 21 27 34;
-  --color-muted: 233 247 250;
-  --color-muted-foreground: 55 70 82;
-  --color-border: 190 224 230;
-  --color-line: 219 236 240;
-  --color-lake: 22 157 144;
-  --color-aqua: 33 140 224;
-  --color-terracotta: 237 128 82;
-  --color-gold: 240 183 64;
-  --color-iris: 126 112 217;
-  --color-ink: 21 27 34;
-  --color-risk: 176 83 92;
-  --color-warning: 191 135 38;
-  --color-panel: 255 255 255;
-  --color-mint: 223 250 244;
-  --color-peach: 255 232 222;
-  --color-sky: 223 244 255;
-  --color-butter: 255 244 205;
-  --body-gradient-a: rgba(48, 196, 180, 0.22);
-  --body-gradient-b: rgba(89, 160, 255, 0.22);
-  --body-gradient-c: rgba(255, 191, 79, 0.18);
-  --body-gradient-base-1: #f7fdff;
-  --body-gradient-base-2: #fffdf8;
-  --body-gradient-base-3: #efffff;
+:root[data-theme="midnight"] {
+  --color-background: 4 8 16;
+  --color-foreground: 222 235 249;
+  --color-muted: 16 26 42;
+  --color-muted-foreground: 148 167 190;
+  --color-border: 39 62 89;
+  --color-line: 24 42 64;
+  --color-lake: 63 210 230;
+  --color-aqua: 88 156 255;
+  --color-terracotta: 230 101 118;
+  --color-gold: 221 181 84;
+  --color-iris: 148 128 246;
+  --color-ink: 241 248 255;
+  --color-risk: 230 101 118;
+  --color-warning: 221 181 84;
+  --color-panel: 9 18 31;
+  --color-mint: 12 57 72;
+  --color-peach: 73 31 43;
+  --color-sky: 17 47 78;
+  --color-butter: 66 52 23;
+  --body-gradient-a: rgba(63, 210, 230, 0.12);
+  --body-gradient-b: rgba(88, 156, 255, 0.16);
+  --body-gradient-c: rgba(148, 128, 246, 0.10);
+  --body-gradient-base-1: #040810;
+  --body-gradient-base-2: #07111f;
+  --body-gradient-base-3: #0b1424;
 }
 
-:root[data-theme="resort"] {
-  --color-background: 255 250 244;
-  --color-foreground: 35 32 29;
-  --color-muted: 251 239 226;
-  --color-muted-foreground: 91 70 55;
-  --color-border: 232 209 186;
-  --color-line: 239 224 205;
-  --color-lake: 68 137 111;
-  --color-aqua: 76 148 173;
-  --color-terracotta: 205 105 62;
-  --color-gold: 211 156 58;
-  --color-iris: 139 111 154;
-  --color-ink: 35 32 29;
-  --color-risk: 166 83 74;
-  --color-warning: 183 126 44;
+:root[data-theme="glacier"] {
+  --color-background: 239 247 255;
+  --color-foreground: 17 31 45;
+  --color-muted: 221 235 247;
+  --color-muted-foreground: 61 79 99;
+  --color-border: 178 204 225;
+  --color-line: 205 224 239;
+  --color-lake: 9 142 162;
+  --color-aqua: 38 119 210;
+  --color-terracotta: 190 81 101;
+  --color-gold: 170 126 42;
+  --color-iris: 103 96 190;
+  --color-ink: 17 31 45;
+  --color-risk: 174 74 92;
+  --color-warning: 156 112 36;
   --color-panel: 255 255 255;
-  --color-mint: 232 244 232;
-  --color-peach: 255 232 215;
-  --color-sky: 229 245 247;
-  --color-butter: 255 241 202;
-  --body-gradient-a: rgba(205, 105, 62, 0.17);
-  --body-gradient-b: rgba(68, 137, 111, 0.15);
-  --body-gradient-c: rgba(211, 156, 58, 0.17);
-  --body-gradient-base-1: #fffaf4;
-  --body-gradient-base-2: #fffdf8;
-  --body-gradient-base-3: #f7fff4;
+  --color-mint: 214 244 247;
+  --color-peach: 251 225 231;
+  --color-sky: 219 237 255;
+  --color-butter: 248 238 205;
+  --body-gradient-a: rgba(9, 142, 162, 0.14);
+  --body-gradient-b: rgba(38, 119, 210, 0.12);
+  --body-gradient-c: rgba(103, 96, 190, 0.08);
+  --body-gradient-base-1: #eef7ff;
+  --body-gradient-base-2: #f8fbff;
+  --body-gradient-base-3: #eaf6fb;
 }
 
-:root[data-theme="minimal"] {
-  --color-background: 248 250 248;
-  --color-foreground: 29 35 33;
-  --color-muted: 238 243 240;
-  --color-muted-foreground: 62 75 70;
-  --color-border: 211 222 216;
-  --color-line: 226 233 229;
-  --color-lake: 54 119 100;
-  --color-aqua: 67 124 150;
-  --color-terracotta: 177 112 75;
-  --color-gold: 178 144 68;
-  --color-iris: 111 105 142;
-  --color-ink: 29 35 33;
-  --color-risk: 155 82 82;
-  --color-warning: 165 124 50;
-  --color-panel: 255 255 255;
-  --color-mint: 231 240 235;
-  --color-peach: 246 234 226;
-  --color-sky: 231 240 244;
-  --color-butter: 246 240 220;
-  --body-gradient-a: rgba(54, 119, 100, 0.12);
-  --body-gradient-b: rgba(67, 124, 150, 0.10);
-  --body-gradient-c: rgba(178, 144, 68, 0.10);
-  --body-gradient-base-1: #fbfcfb;
-  --body-gradient-base-2: #f8faf8;
-  --body-gradient-base-3: #f2f7f4;
+:root[data-theme="graphite"] {
+  --color-background: 17 24 32;
+  --color-foreground: 224 235 242;
+  --color-muted: 31 43 52;
+  --color-muted-foreground: 162 177 188;
+  --color-border: 62 82 95;
+  --color-line: 42 59 70;
+  --color-lake: 86 196 190;
+  --color-aqua: 111 164 212;
+  --color-terracotta: 217 112 124;
+  --color-gold: 210 175 93;
+  --color-iris: 149 138 212;
+  --color-ink: 237 245 249;
+  --color-risk: 217 112 124;
+  --color-warning: 210 175 93;
+  --color-panel: 23 33 43;
+  --color-mint: 24 73 75;
+  --color-peach: 78 40 48;
+  --color-sky: 31 61 83;
+  --color-butter: 72 60 32;
+  --body-gradient-a: rgba(86, 196, 190, 0.12);
+  --body-gradient-b: rgba(111, 164, 212, 0.12);
+  --body-gradient-c: rgba(149, 138, 212, 0.08);
+  --body-gradient-base-1: #111820;
+  --body-gradient-base-2: #17212b;
+  --body-gradient-base-3: #132029;
 }
 
 * {
@@ -158,10 +158,10 @@ body {
   min-height: 100vh;
   margin: 0;
   background:
-    radial-gradient(circle at 7% 0%, var(--body-gradient-a), transparent 28rem),
-    radial-gradient(circle at 88% 8%, var(--body-gradient-b), transparent 26rem),
-    radial-gradient(circle at 45% 100%, var(--body-gradient-c), transparent 28rem),
-    linear-gradient(135deg, var(--body-gradient-base-1) 0%, var(--body-gradient-base-2) 42%, var(--body-gradient-base-3) 100%);
+    radial-gradient(circle at 9% 0%, var(--body-gradient-a), transparent 29rem),
+    radial-gradient(circle at 86% 8%, var(--body-gradient-b), transparent 28rem),
+    radial-gradient(circle at 50% 100%, var(--body-gradient-c), transparent 30rem),
+    linear-gradient(135deg, var(--body-gradient-base-1) 0%, var(--body-gradient-base-2) 46%, var(--body-gradient-base-3) 100%);
 }
 
 button,
@@ -186,7 +186,25 @@ a {
 }
 
 .panel-line {
-  border: 1px solid rgb(var(--color-border));
+  border: 1px solid rgb(var(--color-border) / 0.72);
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.05);
+}
+
+.panel-line,
+.motion-panel {
+  animation: panel-enter 0.48s ease both;
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    background-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.panel-line:hover,
+.motion-panel:hover {
+  transform: translateY(-2px);
+  border-color: rgb(var(--color-aqua) / 0.48);
+  box-shadow: 0 18px 42px rgb(0 0 0 / 0.16), inset 0 1px 0 rgb(255 255 255 / 0.06);
 }
 
 .quiet-scrollbar {
@@ -202,4 +220,29 @@ a {
 .quiet-scrollbar::-webkit-scrollbar-thumb {
   background: rgb(var(--color-border));
   border-radius: 999px;
+}
+
+@keyframes panel-enter {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .panel-line,
+  .motion-panel {
+    animation: none;
+    transition: none;
+  }
+
+  .panel-line:hover,
+  .motion-panel:hover {
+    transform: none;
+  }
 }

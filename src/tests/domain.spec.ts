@@ -1,6 +1,8 @@
 import { describe, expect, it } from 'vitest'
+import { createPinia } from 'pinia'
 
 import { modulePages } from '@/data/module-pages'
+import { useAppStore } from '@/stores/app'
 import { sortMetricsByStatus, sortRisksByPriority } from '@/types/domain'
 
 describe('domain helpers', () => {
@@ -45,5 +47,12 @@ describe('domain helpers', () => {
       '客源分析',
     ])
     expect(new Set(modulePages.map((item) => item.path)).size).toBe(12)
+  })
+
+  it('does not expose competitor place names in product-facing module content', () => {
+    const app = useAppStore(createPinia())
+    const productText = JSON.stringify({ projectName: app.projectName, modulePages })
+
+    expect(productText).not.toMatch(/茗岭|窑湖|小镇|飞鸟|窑厂|陶庐|湖山|竹溪/)
   })
 })

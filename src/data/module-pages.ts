@@ -88,7 +88,7 @@ export const modulePages: ModulePageConfig[] = [
     ],
     details: [
       { id: 'live-hotel', label: '房态分布', value: '占用 607 / 可卖 806 / 停售 5', note: '客源构成为散客 298、团队 297' },
-      { id: 'live-ticket', label: '票务构成', value: '核销票数 988 / 售卖票数 1434', note: '窑湖小镇 640 人，飞鸟之约 115 人' },
+      { id: 'live-ticket', label: '票务构成', value: '核销票数 988 / 售卖票数 1434', note: '主园区 640 人，湿地剧场 115 人' },
       { id: 'live-parking', label: '停车收入', value: '¥351.00', note: '作为实时总览收入快报的停车场口径' },
     ],
     trend: [
@@ -115,7 +115,7 @@ export const modulePages: ModulePageConfig[] = [
     metrics: [
       { id: 'history-occ', label: '入住率', value: '41.18', unit: '%', status: 'warning', insight: '昨日 50.00%，环比下降 17.63%' },
       { id: 'history-revenue', label: '总收入', value: '58.34', unit: '万', status: 'warning', insight: '昨日 ¥839,905.60，环比下降 30.54%' },
-      { id: 'history-visitors', label: '入园人数', value: '4,086', unit: '人', status: 'warning', insight: '窑湖小镇 3,799 人，飞鸟之约 287 人' },
+      { id: 'history-visitors', label: '入园人数', value: '4,086', unit: '人', status: 'warning', insight: '主园区 3,799 人，湿地剧场 287 人' },
       { id: 'history-adr', label: '含早餐平均房价', value: '511.06', unit: '元', status: 'normal', insight: '昨日 525.16 元，同比 526.71 元' },
     ],
     changes: [
@@ -279,7 +279,7 @@ export const modulePages: ModulePageConfig[] = [
     details: [
       { id: 'review-source-province', label: '本省游客占比', value: '江苏 19.10%', note: '外省游客占比 80.90%' },
       { id: 'review-source-city', label: '本市游客占比', value: '无锡 3.59%', note: '外地游客占比 96.41%' },
-      { id: 'review-hotel-top', label: '酒店出租率 Top1', value: '窑湖大酒店 68.28%', note: '上榜酒店 7 家' },
+      { id: 'review-hotel-top', label: '酒店出租率 Top1', value: '湖岸酒店 68.28%', note: '上榜酒店 7 家' },
     ],
     trend: [
       { label: '收入', value: 1007.8, compare: 778.0 },
@@ -309,22 +309,22 @@ export const modulePages: ModulePageConfig[] = [
     changes: [
       { id: 'hotel-total', label: '合计出租率', current: '42.74%', compareLabel: '昨日环比', compare: '+1.56%', change: '微升', status: 'normal' },
       { id: 'hotel-yoy', label: '合计出租率', current: '42.74%', compareLabel: '同比去年', compare: '-2.08%', change: '略低', status: 'warning' },
-      { id: 'hotel-yh', label: '窑湖大酒店', current: '40.00%', compareLabel: '同比去年', compare: '-11.26%', change: '需关注', status: 'warning' },
-      { id: 'hotel-ych', label: '窑厂酒店', current: '49.67%', compareLabel: '同比去年', compare: '+12.94%', change: '增长', status: 'normal' },
+      { id: 'hotel-yh', label: '湖岸酒店', current: '40.00%', compareLabel: '同比去年', compare: '-11.26%', change: '需关注', status: 'warning' },
+      { id: 'hotel-ych', label: '艺术酒店', current: '49.67%', compareLabel: '同比去年', compare: '+12.94%', change: '增长', status: 'normal' },
     ],
     details: [
       { id: 'hotel-scatter', label: '团散结构', value: '散客 297 间 / 团队 297 间', note: '合计口径接近 1:1' },
-      { id: 'hotel-yh-rev', label: '窑湖大酒店收入', value: '¥147,319.64', note: '出租 270 间，ADR ¥545.63' },
-      { id: 'hotel-yc-rev', label: '窑厂酒店收入', value: '¥141,499.50', note: '出租 299 间，ADR ¥473.24' },
+      { id: 'hotel-yh-rev', label: '湖岸酒店收入', value: '¥147,319.64', note: '出租 270 间，ADR ¥545.63' },
+      { id: 'hotel-yc-rev', label: '艺术酒店收入', value: '¥141,499.50', note: '出租 299 间，ADR ¥473.24' },
     ],
     trend: [
-      { label: '窑湖', value: 40.0, compare: 545.6 },
+      { label: '湖岸', value: 40.0, compare: 545.6 },
       { label: '9号楼', value: 0, compare: 0 },
-      { label: '窑厂', value: 49.7, compare: 473.2 },
-      { label: '陶庐', value: 39.5, compare: 537.1 },
-      { label: '湖山', value: 42.0, compare: 1044.5 },
-      { label: '茗宿', value: 0, compare: 0 },
-      { label: '竹溪', value: 12.5, compare: 669.0 },
+      { label: '艺术', value: 49.7, compare: 473.2 },
+      { label: '观澜院', value: 39.5, compare: 537.1 },
+      { label: '云岭', value: 42.0, compare: 1044.5 },
+      { label: '星野客舍', value: 0, compare: 0 },
+      { label: '林间', value: 12.5, compare: 669.0 },
     ],
     chart: { title: '酒店出租率与 ADR', subtitle: '柱为出租率，参考线为平均房价。', type: 'bar', valueLabel: '出租率', compareLabel: 'ADR' },
   },

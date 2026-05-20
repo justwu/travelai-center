@@ -8,7 +8,7 @@ defineProps<{
 </script>
 
 <template>
-  <section class="panel-line rounded-panel bg-white p-4 sm:p-5">
+  <section class="panel-line rounded-panel bg-panel p-4 sm:p-5">
     <h2 class="text-[18px] font-medium text-ink">未来经营热力</h2>
     <p class="mt-1 text-[14px] text-muted-foreground">把出租、票务和收入压力放在同一张日历里判断。</p>
     <div class="mt-4 grid gap-3 md:grid-cols-7">

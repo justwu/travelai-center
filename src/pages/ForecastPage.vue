@@ -7,7 +7,7 @@ import { forecastDays, forecastSummary, forecastTrend } from '@/data/mock-foreca
 
 <template>
   <div class="mx-auto max-w-[1480px] space-y-4">
-    <header class="panel-line rounded-panel bg-white p-4 sm:p-5">
+    <header class="panel-line rounded-panel bg-panel p-4 sm:p-5">
       <p class="text-[14px] text-muted-foreground">预售预测</p>
       <h1 class="mt-1 text-[28px] font-medium text-ink sm:text-[34px]">未来 7 天经营压力</h1>
       <p class="mt-3 max-w-3xl text-[15px] leading-7 text-muted-foreground">
@@ -26,10 +26,10 @@ import { forecastDays, forecastSummary, forecastTrend } from '@/data/mock-foreca
     <ForecastCalendar :days="forecastDays" />
 
     <section class="grid gap-4 lg:grid-cols-[0.95fr_1.05fr]">
-      <div class="panel-line rounded-panel bg-white p-4 sm:p-5">
+      <div class="panel-line rounded-panel bg-panel p-4 sm:p-5">
         <h2 class="text-[18px] font-medium text-ink">风险日期</h2>
         <div class="mt-4 space-y-3">
-          <div v-for="day in forecastDays.filter((item) => item.status !== 'normal')" :key="day.date" class="rounded-panel border border-line bg-white p-3">
+          <div v-for="day in forecastDays.filter((item) => item.status !== 'normal')" :key="day.date" class="rounded-panel border border-line bg-panel p-3">
             <div class="flex items-baseline justify-between gap-3">
               <p class="text-[15px] font-medium text-ink">{{ day.date }} {{ day.label }}</p>
               <p class="amount-font text-[18px] font-medium text-ink">{{ day.revenue }} 万</p>
@@ -39,7 +39,7 @@ import { forecastDays, forecastSummary, forecastTrend } from '@/data/mock-foreca
         </div>
       </div>
 
-      <div class="panel-line rounded-panel bg-white p-4 sm:p-5">
+      <div class="panel-line rounded-panel bg-panel p-4 sm:p-5">
         <h2 class="text-[18px] font-medium text-ink">建议动作</h2>
         <div class="mt-4 space-y-3 text-[15px] leading-7 text-ink">
           <p>周六预售和票务峰值同步升高，建议提前完成核销排班和停车引导预案。</p>

@@ -45,7 +45,7 @@ const activePath = computed(() => route.path)
 </script>
 
 <template>
-  <aside class="hidden h-screen w-[258px] shrink-0 flex-col border-r border-border/90 bg-white/88 px-4 py-5 backdrop-blur lg:sticky lg:top-0 lg:flex">
+  <aside class="hidden h-screen w-[258px] shrink-0 flex-col border-r border-border/90 bg-panel/88 px-4 py-5 backdrop-blur lg:sticky lg:top-0 lg:flex">
     <RouterLink to="/" class="mb-6 block shrink-0">
       <div class="text-[18px] font-medium tracking-[0] text-ink">TravelAI Center</div>
       <div class="mt-1 text-[13px] text-muted-foreground">文旅经营中枢</div>
@@ -60,7 +60,7 @@ const activePath = computed(() => route.path)
             :key="item.path"
             :to="item.path"
             class="flex items-center gap-3 rounded-panel border px-3 py-2.5 text-[14px] transition"
-            :class="activePath === item.path ? 'border-lake/35 bg-mint text-ink' : 'border-transparent text-muted-foreground hover:border-border hover:bg-white/80 hover:text-ink'"
+            :class="activePath === item.path ? 'border-lake/35 bg-mint text-ink' : 'border-transparent text-muted-foreground hover:border-border hover:bg-panel/80 hover:text-ink'"
           >
             <component :is="icons[item.icon]" class="h-4 w-4 shrink-0" :stroke-width="1.8" />
             <span class="truncate">{{ item.title }}</span>

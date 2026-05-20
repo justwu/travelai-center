@@ -8,7 +8,7 @@ defineProps<{
 </script>
 
 <template>
-  <section class="panel-line rounded-panel bg-white px-4 py-4 sm:px-5">
+  <section class="panel-line rounded-panel bg-panel px-4 py-4 sm:px-5">
     <div class="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
       <div>
         <p class="text-[13px] text-muted-foreground">今日经营状态</p>

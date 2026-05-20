@@ -16,7 +16,7 @@ const page = computed(() => modulePageById[String(route.meta.moduleId)] ?? modul
 
 <template>
   <div class="mx-auto max-w-[1480px] space-y-4">
-    <header class="panel-line rounded-panel bg-white p-4 sm:p-5">
+    <header class="panel-line rounded-panel bg-panel p-4 sm:p-5">
       <div class="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
         <div>
           <p class="text-[14px] text-muted-foreground">{{ app.projectName }}</p>
@@ -44,7 +44,7 @@ const page = computed(() => modulePageById[String(route.meta.moduleId)] ?? modul
         :compare-label="page.chart.compareLabel ?? '参考'"
       />
 
-      <section class="panel-line rounded-panel bg-white p-4 sm:p-5">
+      <section class="panel-line rounded-panel bg-panel p-4 sm:p-5">
         <div class="flex items-baseline justify-between gap-3">
           <h2 class="text-[18px] font-medium text-ink">状态变化</h2>
           <span class="text-[13px] text-muted-foreground">{{ page.changes.length }} 项</span>
@@ -72,14 +72,14 @@ const page = computed(() => modulePageById[String(route.meta.moduleId)] ?? modul
       </section>
     </section>
 
-    <section class="panel-line rounded-panel bg-white p-4 sm:p-5">
+    <section class="panel-line rounded-panel bg-panel p-4 sm:p-5">
       <div class="flex items-baseline justify-between gap-3">
         <h2 class="text-[18px] font-medium text-ink">页面信息结构</h2>
         <span class="text-[13px] text-muted-foreground">来自竞品采集内容的轻量重组</span>
       </div>
 
       <div class="mt-4 grid gap-3 lg:grid-cols-3">
-        <article v-for="item in page.details" :key="item.id" class="rounded-panel border border-line bg-white px-4 py-3">
+        <article v-for="item in page.details" :key="item.id" class="rounded-panel border border-line bg-panel px-4 py-3">
           <p class="text-[14px] font-medium text-muted-foreground">{{ item.label }}</p>
           <p class="mt-2 amount-font text-[20px] font-medium leading-snug text-ink">{{ item.value }}</p>
           <p class="mt-2 text-[13px] leading-5 text-muted-foreground sm:text-[14px]">{{ item.note }}</p>

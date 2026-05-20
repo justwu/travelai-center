@@ -54,17 +54,18 @@ onUnmounted(() => {
 const option = computed(() => ({
   color: [
     cssRgb('--color-lake', '#169d90'),
-    cssRgb('--color-terracotta', '#ed8052'),
     cssRgb('--color-aqua', '#218ce0'),
+    cssRgb('--color-iris', '#7e70d9'),
     cssRgb('--color-gold', '#f0b740'),
+    cssRgb('--color-terracotta', '#ed8052'),
   ],
   tooltip: {
     trigger: 'axis',
-    backgroundColor: 'rgba(255,255,255,0.98)',
+    backgroundColor: cssRgba('--color-panel', 0.96, 'rgba(9, 18, 31, 0.96)'),
     borderColor: cssRgb('--color-border', '#bee0e6'),
     borderWidth: 1,
     textStyle: { color: cssRgb('--color-ink', '#151b22'), fontSize: 13 },
-    extraCssText: 'box-shadow: 0 8px 18px rgba(31,36,40,.08); border-radius: 8px;',
+    extraCssText: 'box-shadow: 0 14px 36px rgba(0,0,0,.22); border-radius: 8px;',
   },
   grid: { left: 34, right: 18, top: 24, bottom: 30 },
   xAxis: {
@@ -109,7 +110,7 @@ const option = computed(() => ({
 </script>
 
 <template>
-  <section class="panel-line rounded-panel bg-white p-4 sm:p-5">
+  <section class="panel-line rounded-panel bg-panel p-4 sm:p-5">
     <h2 class="text-[18px] font-medium text-ink">{{ title }}</h2>
     <p v-if="subtitle" class="mt-1 text-[14px] text-muted-foreground">{{ subtitle }}</p>
     <VChart class="mt-4 h-[260px] w-full sm:h-[300px]" :option="option" autoresize />

@@ -9,7 +9,7 @@ defineProps<{
 </script>
 
 <template>
-  <article class="panel-line rounded-panel bg-white px-4 py-4">
+  <article class="panel-line rounded-panel bg-panel px-4 py-4">
     <div class="flex items-start justify-between gap-3">
       <div>
         <p class="text-[14px] font-medium text-muted-foreground">{{ metric.label }}</p>

@@ -16,6 +16,7 @@ import {
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
 
+import ThemeSwitcher from '@/components/business/ThemeSwitcher.vue'
 import { modulePages, type ModuleIcon } from '@/data/module-pages'
 
 const route = useRoute()
@@ -39,7 +40,8 @@ const icons: Record<ModuleIcon, unknown> = {
 
 <template>
   <div class="fixed inset-x-3 bottom-3 z-30 space-y-2 lg:hidden">
-    <nav class="quiet-scrollbar flex gap-2 overflow-x-auto rounded-[18px] border border-border bg-white/96 px-2 py-2 backdrop-blur">
+    <ThemeSwitcher compact />
+    <nav class="quiet-scrollbar flex gap-2 overflow-x-auto rounded-[18px] border border-border bg-panel/96 px-2 py-2 backdrop-blur">
       <RouterLink
         v-for="item in modulePages"
         :key="item.path"

@@ -8,7 +8,7 @@ defineProps<{
 </script>
 
 <template>
-  <section class="panel-line rounded-panel bg-white p-4 sm:p-5">
+  <section class="panel-line rounded-panel bg-panel p-4 sm:p-5">
     <div class="mb-4">
       <h2 class="text-[18px] font-medium text-ink">经营链路</h2>
       <p class="mt-1 text-[14px] text-muted-foreground">从到达到消费，观察每个环节的转化质量。</p>

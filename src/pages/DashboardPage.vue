@@ -17,7 +17,7 @@ const app = useAppStore()
 
     <section class="grid gap-4 xl:grid-cols-[1.15fr_0.85fr]">
       <div class="space-y-4">
-        <div class="panel-line rounded-panel bg-white p-4 sm:p-5">
+        <div class="panel-line rounded-panel bg-panel p-4 sm:p-5">
           <p class="text-[14px] text-muted-foreground">经营判断</p>
           <h2 class="mt-2 max-w-3xl text-[25px] font-medium leading-tight text-ink sm:text-[34px]">
             今日整体平稳，商业转化偏弱，午后票务核销需要提前处理。

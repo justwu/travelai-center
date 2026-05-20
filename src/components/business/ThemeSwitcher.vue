@@ -17,7 +17,7 @@ function selectTheme(theme: AppTheme) {
 </script>
 
 <template>
-  <section class="rounded-panel border border-border bg-white/86 p-3">
+  <section class="motion-panel rounded-panel border border-border bg-panel/86 p-3 backdrop-blur">
     <div class="mb-2 flex items-center gap-2 text-[13px] text-muted-foreground">
       <Palette class="h-4 w-4" :stroke-width="1.8" />
       <span>主题配色</span>
@@ -30,7 +30,7 @@ function selectTheme(theme: AppTheme) {
         class="rounded-panel border px-3 text-left transition"
         :class="[
           compact ? 'py-1.5' : 'py-2',
-          app.theme === theme.value ? 'border-aqua bg-sky text-ink' : 'border-line bg-white text-muted-foreground hover:border-border hover:text-ink',
+          app.theme === theme.value ? 'border-aqua bg-sky text-ink' : 'border-line bg-panel text-muted-foreground hover:border-border hover:text-ink',
         ]"
         @click="selectTheme(theme.value)"
       >

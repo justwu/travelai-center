@@ -7,7 +7,7 @@ defineProps<{
 </script>
 
 <template>
-  <section class="panel-line rounded-panel bg-white p-4 sm:p-5">
+  <section class="panel-line rounded-panel bg-panel p-4 sm:p-5">
     <h2 class="text-[18px] font-medium text-ink">数据证据</h2>
     <div class="mt-4 divide-y divide-line">
       <article v-for="item in items" :key="item.id" class="py-3 first:pt-0 last:pb-0">

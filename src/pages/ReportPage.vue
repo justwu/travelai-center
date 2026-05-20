@@ -15,7 +15,7 @@ const paragraphs = [
 
 <template>
   <div class="mx-auto max-w-[1480px] space-y-4">
-    <header class="panel-line rounded-panel bg-white p-4 sm:p-5">
+    <header class="panel-line rounded-panel bg-panel p-4 sm:p-5">
       <p class="text-[14px] text-muted-foreground">复盘报告</p>
       <h1 class="mt-1 text-[28px] font-medium text-ink sm:text-[34px]">经营复盘初稿</h1>
       <p class="mt-3 max-w-3xl text-[15px] leading-7 text-muted-foreground">
