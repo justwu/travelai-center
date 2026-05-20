@@ -16,3 +16,11 @@ export const reportActions: ActionItem[] = [
   { id: 'r1', title: '周末票务核销预案', owner: '票务中心', due: '05-22 18:00', status: '待处理', evidence: '05-23 票务预售风险为高' },
   { id: 'r2', title: '商业动线复盘', owner: '商业部', due: '05-21 12:00', status: '进行中', evidence: '商业转化率持续低于 1%' },
 ]
+
+export const reportTrend = [
+  { label: '酒店', value: 486, compare: 431 },
+  { label: '票务', value: 292, compare: 248 },
+  { label: '景区', value: 91, compare: 76 },
+  { label: '停车', value: 7, compare: 6 },
+  { label: '商业', value: 18, compare: 32 },
+]

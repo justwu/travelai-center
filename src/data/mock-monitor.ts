@@ -19,7 +19,7 @@ export const monitorSections: MonitorSection[] = [
       { id: 'adr', label: '平均房价', value: '¥546', status: 'warning', trend: -4.8 },
     ],
     trend: [
-      { label: '周一', value: 38 }, { label: '周二', value: 41 }, { label: '周三', value: 43 }, { label: '周四', value: 45 },
+      { label: '周一', value: 38, compare: 35 }, { label: '周二', value: 41, compare: 39 }, { label: '周三', value: 43, compare: 42 }, { label: '周四', value: 45, compare: 44 },
     ],
   },
   {
@@ -32,7 +32,7 @@ export const monitorSections: MonitorSection[] = [
       { id: 'check', label: '核销效率', value: '91', unit: '%', status: 'normal', trend: 1.3 },
     ],
     trend: [
-      { label: '09', value: 62 }, { label: '10', value: 118 }, { label: '11', value: 176 }, { label: '12', value: 221 },
+      { label: '09', value: 62, compare: 54 }, { label: '10', value: 118, compare: 96 }, { label: '11', value: 176, compare: 161 }, { label: '12', value: 221, compare: 205 },
     ],
   },
   {
@@ -45,7 +45,7 @@ export const monitorSections: MonitorSection[] = [
       { id: 'conv', label: '转化率', value: '0.92', unit: '%', status: 'risk', trend: -0.4 },
     ],
     trend: [
-      { label: '09', value: 4 }, { label: '10', value: 9 }, { label: '11', value: 14 }, { label: '12', value: 18 },
+      { label: '09', value: 4, compare: 8 }, { label: '10', value: 9, compare: 16 }, { label: '11', value: 14, compare: 25 }, { label: '12', value: 18, compare: 33 },
     ],
   },
 ]

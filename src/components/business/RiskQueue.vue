@@ -13,7 +13,7 @@ const priorityLabel = {
 </script>
 
 <template>
-  <section class="panel-line rounded-panel bg-panel p-4 sm:p-5">
+  <section class="panel-line rounded-panel bg-white p-4 sm:p-5">
     <div class="mb-4 flex items-center justify-between gap-3">
       <div>
         <h2 class="text-[18px] font-medium text-ink">异常队列</h2>
@@ -23,10 +23,10 @@ const priorityLabel = {
     </div>
 
     <div class="space-y-3">
-      <article v-for="item in sortRisksByPriority(props.items)" :key="item.id" class="rounded-panel border border-line bg-background/70 p-3">
+      <article v-for="item in sortRisksByPriority(props.items)" :key="item.id" class="rounded-panel border border-line bg-white p-3">
         <div class="flex items-start justify-between gap-3">
           <h3 class="text-[15px] font-medium text-ink">{{ item.title }}</h3>
-          <span class="shrink-0 rounded-full border px-2.5 py-1 text-[13px]" :class="item.priority === 'high' ? 'border-risk/30 bg-risk/10 text-risk' : item.priority === 'medium' ? 'border-warning/30 bg-warning/10 text-warning' : 'border-border bg-white text-muted-foreground'">
+          <span class="shrink-0 rounded-full border px-2.5 py-1 text-[13px]" :class="item.priority === 'high' ? 'border-risk/25 bg-peach text-risk' : item.priority === 'medium' ? 'border-warning/25 bg-butter text-warning' : 'border-border bg-mint text-muted-foreground'">
             {{ priorityLabel[item.priority] }}
           </span>
         </div>

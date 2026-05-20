@@ -15,3 +15,9 @@ export const forecastDays: ForecastDay[] = [
   { date: '05-26', label: '周二', occupancy: 39, tickets: 690, revenue: 14.7, status: 'normal', note: '低峰日' },
   { date: '05-27', label: '周三', occupancy: 44, tickets: 810, revenue: 16.8, status: 'normal', note: '可做套餐投放' },
 ]
+
+export const forecastTrend = forecastDays.map((day) => ({
+  label: day.date,
+  value: day.revenue,
+  compare: Math.round(day.occupancy * 0.42),
+}))

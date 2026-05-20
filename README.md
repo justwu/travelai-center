@@ -47,7 +47,16 @@ npm run build
 3. Build Command 使用 `npm run build`。
 4. Output Directory 使用 `dist`。
 
-当前机器直接推送 GitHub 需要配置 SSH key 或 HTTPS token。
+当前机器直接推送 GitHub 需要配置 SSH key 或 HTTPS token。GitHub 不支持账号密码推送；HTTPS 推送时，命令行的 password 位置需要粘贴 Personal Access Token。
+
+不用安装 `gh` CLI 也可以推送。可在 GitHub 网页生成 token 后执行：
+
+```bash
+git remote set-url origin https://github.com/justwu/travelai-center.git
+git push -u origin main
+```
+
+提示 username 时输入 GitHub 用户名，提示 password 时粘贴 token。
 
 ## 截图留证
 

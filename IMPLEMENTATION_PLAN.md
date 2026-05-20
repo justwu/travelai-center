@@ -35,7 +35,8 @@ The most important visual rules from `design.md`:
 - Local project path: `/Users/just/devdata/AI制品/pbtest/yhxz/travelai-center`
 - GitHub repository: `https://github.com/justwu/travelai-center`
 - Preferred remote URL after auth is ready: `git@github.com:justwu/travelai-center.git` or HTTPS with a token.
-- Current machine check: HTTPS requires token; SSH currently reports `Permission denied (publickey)`. Push may need user auth setup.
+- Current machine check: HTTPS requires a Personal Access Token; SSH currently reports `Permission denied (publickey)`. Push may need user auth setup.
+- GitHub does not support account-password git push. If using HTTPS, paste a Personal Access Token when Git asks for password.
 - Vercel target: connect GitHub repo, build command `npm run build`, output directory `dist`.
 
 ## 2. File Structure Target
@@ -127,7 +128,7 @@ Expected: Vite dev server starts and build writes `dist/`.
 - Modify: `src/main.ts`
 
 - [ ] Encode the color and typography rules from `design.md`.
-- [ ] Use muted risk red `#a4514f`, lake green `#2f6f62`, terracotta `#b8693b`, warm background `#f7f4ef`.
+- [ ] Use muted risk red `#a85b58`, lake green `#2f7d68`, aqua `#3d86a6`, terracotta `#c97845`, warm bright background `#fbfaf6`.
 - [ ] Avoid heavy font weights by default.
 - [ ] Add utility classes for tabular amount text.
 - [ ] Verify in browser that default text contrast is readable.
@@ -278,6 +279,15 @@ git push -u origin main
 
 If SSH is not configured, use HTTPS with a token or ask the user to run `gh auth login`.
 
+HTTPS fallback:
+
+```bash
+git remote set-url origin https://github.com/justwu/travelai-center.git
+git push -u origin main
+```
+
+When prompted, username is the GitHub username and password is a Personal Access Token.
+
 ## 4. Acceptance Criteria
 
 - The app runs locally with `npm run dev`.
@@ -293,4 +303,3 @@ If SSH is not configured, use HTTPS with a token or ask the user to run `gh auth
 - `design.md` exists and is the design standard.
 - This implementation plan exists for handoff.
 - GitHub repository exists but local machine needs auth setup before pushing.
-

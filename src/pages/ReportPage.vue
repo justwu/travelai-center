@@ -3,7 +3,8 @@ import ActionList from '@/components/business/ActionList.vue'
 import EvidenceList from '@/components/business/EvidenceList.vue'
 import MetricStrip from '@/components/business/MetricStrip.vue'
 import ReportSummary from '@/components/business/ReportSummary.vue'
-import { reportActions, reportEvidence, reportMetrics } from '@/data/mock-report'
+import TrendPanel from '@/components/business/TrendPanel.vue'
+import { reportActions, reportEvidence, reportMetrics, reportTrend } from '@/data/mock-report'
 
 const paragraphs = [
   '本周期经营收入同比增长 29.55%，恢复质量较好。增长主要来自酒店和票务，停车承载保持安全，说明核心到访链路没有出现明显瓶颈。',
@@ -14,7 +15,7 @@ const paragraphs = [
 
 <template>
   <div class="mx-auto max-w-[1480px] space-y-4">
-    <header class="panel-line rounded-panel bg-panel p-4 sm:p-5">
+    <header class="panel-line rounded-panel bg-white p-4 sm:p-5">
       <p class="text-[14px] text-muted-foreground">复盘报告</p>
       <h1 class="mt-1 text-[28px] font-medium text-ink sm:text-[34px]">经营复盘初稿</h1>
       <p class="mt-3 max-w-3xl text-[15px] leading-7 text-muted-foreground">
@@ -23,6 +24,14 @@ const paragraphs = [
     </header>
 
     <MetricStrip :metrics="reportMetrics" />
+    <TrendPanel
+      title="收入构成复盘"
+      subtitle="按业态对比本期和参考期，商业偏弱会更明显。"
+      :points="reportTrend"
+      type="bar"
+      value-label="本期"
+      compare-label="参考期"
+    />
 
     <section class="grid gap-4 xl:grid-cols-[1.15fr_0.85fr]">
       <ReportSummary title="本日经营结论" :paragraphs="paragraphs" />

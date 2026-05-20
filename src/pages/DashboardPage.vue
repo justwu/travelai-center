@@ -17,7 +17,7 @@ const app = useAppStore()
 
     <section class="grid gap-4 xl:grid-cols-[1.15fr_0.85fr]">
       <div class="space-y-4">
-        <div class="panel-line rounded-panel bg-panel p-4 sm:p-5">
+        <div class="panel-line rounded-panel bg-white p-4 sm:p-5">
           <p class="text-[14px] text-muted-foreground">经营判断</p>
           <h2 class="mt-2 max-w-3xl text-[25px] font-medium leading-tight text-ink sm:text-[34px]">
             今日整体平稳，商业转化偏弱，午后票务核销需要提前处理。
@@ -36,6 +36,6 @@ const app = useAppStore()
       </div>
     </section>
 
-    <TrendPanel title="今日收入分时趋势" subtitle="单位：万元，展示经营节奏而不是单纯堆图。" :points="revenueTrend" />
+    <TrendPanel title="今日收入分时趋势" subtitle="单位：万元，ECharts 对比今日与参考日经营节奏。" :points="revenueTrend" value-label="今日" compare-label="参考日" />
   </div>
 </template>

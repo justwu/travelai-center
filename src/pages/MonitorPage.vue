@@ -6,7 +6,7 @@ import { monitorSections } from '@/data/mock-monitor'
 
 <template>
   <div class="mx-auto max-w-[1480px] space-y-4">
-    <header class="panel-line rounded-panel bg-panel p-4 sm:p-5">
+    <header class="panel-line rounded-panel bg-white p-4 sm:p-5">
       <p class="text-[14px] text-muted-foreground">实时监控</p>
       <h1 class="mt-1 text-[28px] font-medium text-ink sm:text-[34px]">分业态经营面板</h1>
       <p class="mt-3 max-w-3xl text-[15px] leading-7 text-muted-foreground">
@@ -15,7 +15,7 @@ import { monitorSections } from '@/data/mock-monitor'
     </header>
 
     <section class="grid gap-4 xl:grid-cols-3">
-      <article v-for="section in monitorSections" :key="section.id" class="panel-line rounded-panel bg-panel p-4 sm:p-5">
+      <article v-for="section in monitorSections" :key="section.id" class="panel-line rounded-panel bg-white p-4 sm:p-5">
         <div class="mb-4">
           <h2 class="text-[20px] font-medium text-ink">{{ section.title }}</h2>
           <p class="mt-2 text-[14px] leading-6 text-muted-foreground">{{ section.summary }}</p>
@@ -34,6 +34,8 @@ import { monitorSections } from '@/data/mock-monitor'
         :subtitle="section.summary"
         :points="section.trend"
         type="bar"
+        value-label="当前"
+        compare-label="昨日"
       />
     </section>
   </div>

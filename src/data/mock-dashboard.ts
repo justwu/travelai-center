@@ -28,11 +28,11 @@ export const journeyNodes: JourneyNode[] = [
 ]
 
 export const revenueTrend: TrendPoint[] = [
-  { label: '09:00', value: 4.2 },
-  { label: '10:00', value: 7.8 },
-  { label: '11:00', value: 12.4 },
-  { label: '12:00', value: 15.6 },
-  { label: '13:00', value: 21.1 },
-  { label: '14:00', value: 27.8 },
-  { label: '15:00', value: 34.5 },
+  { label: '09:00', value: 4.2, compare: 3.8 },
+  { label: '10:00', value: 7.8, compare: 6.9 },
+  { label: '11:00', value: 12.4, compare: 11.8 },
+  { label: '12:00', value: 15.6, compare: 17.2 },
+  { label: '13:00', value: 21.1, compare: 24.7 },
+  { label: '14:00', value: 27.8, compare: 31.1 },
+  { label: '15:00', value: 34.5, compare: 38.2 },
 ]

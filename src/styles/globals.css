@@ -4,7 +4,7 @@
 
 :root {
   color: #1f2428;
-  background: #f7f4ef;
+  background: #fbfaf6;
   font-family: Inter, "SF Pro Display", "SF Pro Text", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -21,8 +21,9 @@ body {
   min-height: 100vh;
   margin: 0;
   background:
-    radial-gradient(circle at top left, rgba(184, 146, 69, 0.14), transparent 28rem),
-    linear-gradient(135deg, #f7f4ef 0%, #f6f7f5 46%, #eef2ed 100%);
+    radial-gradient(circle at 8% 0%, rgba(196, 154, 66, 0.16), transparent 26rem),
+    radial-gradient(circle at 82% 10%, rgba(61, 134, 166, 0.13), transparent 24rem),
+    linear-gradient(135deg, #fffdf8 0%, #fbfaf6 42%, #f1f8f2 100%);
 }
 
 button,
@@ -47,7 +48,7 @@ a {
 }
 
 .panel-line {
-  border: 1px solid #d8ded8;
+  border: 1px solid #d7e2d8;
 }
 
 .quiet-scrollbar {

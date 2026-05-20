@@ -15,8 +15,8 @@ export function statusLabel(status: 'normal' | 'warning' | 'risk') {
 
 export function statusTone(status: 'normal' | 'warning' | 'risk') {
   return {
-    normal: 'border-lake/30 bg-lake/8 text-lake',
-    warning: 'border-warning/30 bg-warning/10 text-warning',
-    risk: 'border-risk/30 bg-risk/10 text-risk',
+    normal: 'border-lake/25 bg-mint text-lake',
+    warning: 'border-warning/25 bg-butter text-warning',
+    risk: 'border-risk/25 bg-peach text-risk',
   }[status]
 }

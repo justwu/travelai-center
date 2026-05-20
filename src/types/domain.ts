@@ -41,6 +41,7 @@ export interface JourneyNode {
 export interface TrendPoint {
   label: string
   value: number
+  compare?: number
 }
 
 export interface ForecastDay {

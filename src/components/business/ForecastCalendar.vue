@@ -8,11 +8,11 @@ defineProps<{
 </script>
 
 <template>
-  <section class="panel-line rounded-panel bg-panel p-4 sm:p-5">
+  <section class="panel-line rounded-panel bg-white p-4 sm:p-5">
     <h2 class="text-[18px] font-medium text-ink">未来经营热力</h2>
     <p class="mt-1 text-[14px] text-muted-foreground">把出租、票务和收入压力放在同一张日历里判断。</p>
     <div class="mt-4 grid gap-3 md:grid-cols-7">
-      <article v-for="day in days" :key="day.date" class="rounded-panel border border-line bg-background/70 p-3">
+      <article v-for="day in days" :key="day.date" class="rounded-panel border border-line p-3" :class="day.status === 'risk' ? 'bg-peach' : day.status === 'warning' ? 'bg-butter' : 'bg-mint/70'">
         <div class="flex items-start justify-between gap-2">
           <div>
             <p class="text-[14px] font-medium text-ink">{{ day.date }}</p>

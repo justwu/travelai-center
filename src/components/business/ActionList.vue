@@ -8,7 +8,7 @@ defineProps<{
 </script>
 
 <template>
-  <section class="panel-line rounded-panel bg-panel p-4 sm:p-5">
+  <section class="panel-line rounded-panel bg-white p-4 sm:p-5">
     <h2 class="text-[18px] font-medium text-ink">{{ title || '今日建议动作' }}</h2>
     <div class="mt-4 divide-y divide-line">
       <article v-for="item in items" :key="item.id" class="py-3 first:pt-0 last:pb-0">
@@ -22,7 +22,7 @@ defineProps<{
             <p>{{ item.due }}</p>
           </div>
         </div>
-        <span class="mt-2 inline-flex rounded-full border border-border bg-background px-2.5 py-1 text-[13px] text-ink">{{ item.status }}</span>
+        <span class="mt-2 inline-flex rounded-full border border-border bg-mint px-2.5 py-1 text-[13px] text-ink">{{ item.status }}</span>
       </article>
     </div>
   </section>
