@@ -303,4 +303,4 @@ When prompted, username is the GitHub username and password is a Personal Access
 - `design.md` exists and is the design standard.
 - This implementation plan exists for handoff.
 - GitHub repository exists but local machine needs auth setup before pushing.
-- Theme system exists. Default theme is `midnight`, with cold light and dark variants for comparison.
+- Theme system exists. Default theme is `cambridge`, with eight accepted themes for comparison.

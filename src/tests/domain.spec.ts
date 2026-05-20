@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest'
 import { createPinia } from 'pinia'
 
 import { modulePages } from '@/data/module-pages'
-import { useAppStore } from '@/stores/app'
+import { themeOptions, useAppStore } from '@/stores/app'
 import { sortMetricsByStatus, sortRisksByPriority } from '@/types/domain'
 
 describe('domain helpers', () => {
@@ -54,5 +54,21 @@ describe('domain helpers', () => {
     const productText = JSON.stringify({ projectName: app.projectName, modulePages })
 
     expect(productText).not.toMatch(/茗岭|窑湖|小镇|飞鸟|窑厂|陶庐|湖山|竹溪/)
+  })
+
+  it('uses the accepted eight-theme set with Cambridge Blue first', () => {
+    const app = useAppStore(createPinia())
+
+    expect(themeOptions.map((item) => item.value)).toEqual([
+      'cambridge',
+      'deepBlue',
+      'violetNight',
+      'greenNight',
+      'sunsetSand',
+      'coralDawn',
+      'stripeCrystal',
+      'mintBlue',
+    ])
+    expect(app.theme).toBe('cambridge')
   })
 })

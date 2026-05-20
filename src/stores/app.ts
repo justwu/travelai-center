@@ -1,21 +1,25 @@
 import { defineStore } from 'pinia'
 
-export type AppTheme = 'aurora' | 'midnight' | 'glacier' | 'graphite'
+export type AppTheme = 'cambridge' | 'deepBlue' | 'violetNight' | 'greenNight' | 'sunsetSand' | 'coralDawn' | 'stripeCrystal' | 'mintBlue'
 
 export const themeOptions: Array<{ value: AppTheme; label: string; description: string }> = [
-  { value: 'aurora', label: '极光冷蓝', description: '蓝白机甲感，清爽高对比' },
-  { value: 'midnight', label: '暗夜模式', description: '深蓝黑、高对比、沉浸' },
-  { value: 'glacier', label: '冰川白', description: '明亮冷调、干净专业' },
-  { value: 'graphite', label: '石墨青', description: '克制、耐看、偏工具感' },
+  { value: 'cambridge', label: '剑桥蓝白', description: '大白底、斜切强蓝、纯蓝按钮' },
+  { value: 'deepBlue', label: '深海蓝黑', description: '深蓝黑底、青蓝高光' },
+  { value: 'violetNight', label: '紫电暗场', description: '蓝紫暗色、产品记忆点更强' },
+  { value: 'greenNight', label: '墨绿夜航', description: '青绿夜色、文旅感更柔' },
+  { value: 'sunsetSand', label: '日光沙丘', description: '日光木色、度假区运营感' },
+  { value: 'coralDawn', label: '珊瑚晨曦', description: '暖白珊瑚、亲和现代' },
+  { value: 'stripeCrystal', label: 'Stripe 晶蓝', description: '白底靛蓝、SaaS 作品感' },
+  { value: 'mintBlue', label: '薄荷蓝白', description: '薄荷青蓝、柔和清爽' },
 ]
 
 function resolveInitialTheme(): AppTheme {
-  if (typeof window === 'undefined') return 'midnight'
+  if (typeof window === 'undefined') return 'cambridge'
   const saved = window.localStorage.getItem('travelai-theme')
   if (saved && themeOptions.some((item) => item.value === saved)) {
     return saved as AppTheme
   }
-  return 'midnight'
+  return 'cambridge'
 }
 
 function applyTheme(theme: AppTheme) {
