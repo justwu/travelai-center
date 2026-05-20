@@ -3,7 +3,7 @@ import { defineStore } from 'pinia'
 export type AppTheme = 'aurora' | 'midnight' | 'glacier' | 'graphite'
 
 export const themeOptions: Array<{ value: AppTheme; label: string; description: string }> = [
-  { value: 'aurora', label: '极光冷蓝', description: '冷色、清透、有科技感' },
+  { value: 'aurora', label: '极光冷蓝', description: '蓝白机甲感，清爽高对比' },
   { value: 'midnight', label: '暗夜模式', description: '深蓝黑、高对比、沉浸' },
   { value: 'glacier', label: '冰川白', description: '明亮冷调、干净专业' },
   { value: 'graphite', label: '石墨青', description: '克制、耐看、偏工具感' },
