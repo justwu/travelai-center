@@ -1,7 +1,9 @@
 import { describe, expect, it } from 'vitest'
 import { createPinia } from 'pinia'
 
-import { modulePages } from '@/data/module-pages'
+import { monitorSections } from '@/data/mock-monitor'
+import { mobileWorkspacePages, modulePageById, modulePages, workspacePages } from '@/data/module-pages'
+import { routes } from '@/router'
 import { themeOptions, useAppStore } from '@/stores/app'
 import { sortMetricsByStatus, sortRisksByPriority } from '@/types/domain'
 
@@ -47,6 +49,30 @@ describe('domain helpers', () => {
       '客源分析',
     ])
     expect(new Set(modulePages.map((item) => item.path)).size).toBe(12)
+  })
+
+  it('restores four core workspace routes for dashboard, monitor, forecast and report', () => {
+    expect(workspacePages.map((item) => item.path)).toEqual(['/', '/monitor', '/forecast', '/report'])
+
+    const routePaths = routes.map((item) => item.path)
+
+    expect(routePaths).toEqual(expect.arrayContaining(['/', '/monitor', '/forecast', '/report']))
+  })
+
+  it('keeps the mobile navigation focused on the four core workspaces', () => {
+    expect(mobileWorkspacePages.map((item) => item.id)).toEqual(['dashboard', 'monitor', 'forecast', 'report'])
+  })
+
+  it('marks the four spotlight modules with dedicated layouts instead of the shared template', () => {
+    expect(modulePageById.hotel.layout).toBe('hotel')
+    expect(modulePageById.commerce.layout).toBe('commerce')
+    expect(modulePageById.parking.layout).toBe('parking')
+    expect(modulePageById.source.layout).toBe('source')
+    expect(modulePageById.history.layout).toBe('default')
+  })
+
+  it('covers five realtime monitor panes including parking and scenic operations', () => {
+    expect(monitorSections.map((item) => item.id)).toEqual(['hotel', 'ticket', 'business', 'parking', 'scenic'])
   })
 
   it('does not expose competitor place names in product-facing module content', () => {

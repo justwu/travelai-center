@@ -48,4 +48,30 @@ export const monitorSections: MonitorSection[] = [
       { label: '09', value: 4, compare: 8 }, { label: '10', value: 9, compare: 16 }, { label: '11', value: 14, compare: 25 }, { label: '12', value: 18, compare: 33 },
     ],
   },
+  {
+    id: 'parking',
+    title: '停车承载',
+    summary: '车位余量仍安全，但午后到达峰值会提前出现。',
+    metrics: [
+      { id: 'parking-in', label: '累计进场', value: 1267, unit: '辆', status: 'normal', trend: 11.8 },
+      { id: 'parking-left', label: '剩余车位', value: 1861, unit: '个', status: 'normal', trend: -4.2 },
+      { id: 'parking-stay', label: '均停时长', value: '0.42', unit: '时', status: 'warning', trend: -2.1 },
+    ],
+    trend: [
+      { label: '09', value: 246, compare: 138 }, { label: '10', value: 438, compare: 236 }, { label: '11', value: 689, compare: 361 }, { label: '12', value: 902, compare: 514 },
+    ],
+  },
+  {
+    id: 'scenic',
+    title: '景区项目',
+    summary: '小火车仍是景管主收入，游览车和船票偏弱。',
+    metrics: [
+      { id: 'scenic-revenue', label: '景管收入', value: '¥8,605', status: 'warning', trend: -15.6 },
+      { id: 'scenic-orders', label: '订单数', value: 461, unit: '单', status: 'normal', trend: 3.7 },
+      { id: 'scenic-convert', label: '项目转化', value: '64.6', unit: '%', status: 'warning', trend: -4.9 },
+    ],
+    trend: [
+      { label: '09', value: 1.1, compare: 5.8 }, { label: '10', value: 2.9, compare: 14.2 }, { label: '11', value: 5.4, compare: 26.8 }, { label: '12', value: 8.6, compare: 60.6 },
+    ],
+  },
 ]

@@ -16,6 +16,10 @@ export type ModuleIcon =
 
 export type ModuleGroupId = 'overview' | 'operation' | 'business' | 'traffic'
 
+export type ModulePageLayout = 'default' | 'hotel' | 'commerce' | 'parking' | 'source'
+
+export type WorkspacePageId = 'dashboard' | 'monitor' | 'forecast' | 'report'
+
 export interface ModuleChange {
   id: string
   label: string
@@ -43,6 +47,7 @@ export interface ModulePageConfig {
   sourceDir: string
   updatedAt: string
   summary: string
+  layout: ModulePageLayout
   metrics: Metric[]
   changes: ModuleChange[]
   details: ModuleDetail[]
@@ -56,6 +61,54 @@ export interface ModulePageConfig {
   }
 }
 
+export interface WorkspacePageConfig {
+  id: WorkspacePageId
+  title: string
+  mobileLabel: string
+  path: string
+  icon: ModuleIcon
+  description: string
+}
+
+type RawModulePageConfig = Omit<ModulePageConfig, 'layout'>
+
+export const workspacePages: WorkspacePageConfig[] = [
+  {
+    id: 'dashboard',
+    title: '经营首页',
+    mobileLabel: '首页',
+    path: '/',
+    icon: 'gauge',
+    description: '先看经营判断、异常队列和行动项。',
+  },
+  {
+    id: 'monitor',
+    title: '实时监控',
+    mobileLabel: '监控',
+    path: '/monitor',
+    icon: 'landmark',
+    description: '按酒店、票务、商业、停车和景区拆开盯实时状态。',
+  },
+  {
+    id: 'forecast',
+    title: '预售预测',
+    mobileLabel: '预测',
+    path: '/forecast',
+    icon: 'calendarClock',
+    description: '提前看未来 7 天承载、收入和风险日期。',
+  },
+  {
+    id: 'report',
+    title: '复盘报告',
+    mobileLabel: '报告',
+    path: '/report',
+    icon: 'clipboardList',
+    description: '把结论、证据和行动项整理成会前版本。',
+  },
+]
+
+export const mobileWorkspacePages = workspacePages
+
 export const moduleGroups: Array<{ id: ModuleGroupId; label: string; moduleIds: string[] }> = [
   { id: 'overview', label: '总览', moduleIds: ['live', 'history'] },
   { id: 'operation', label: '经营分析', moduleIds: ['holiday', 'presale', 'channel', 'review'] },
@@ -63,7 +116,7 @@ export const moduleGroups: Array<{ id: ModuleGroupId; label: string; moduleIds: 
   { id: 'traffic', label: '客源与停车', moduleIds: ['parking', 'source'] },
 ]
 
-export const modulePages: ModulePageConfig[] = [
+const rawModulePages: RawModulePageConfig[] = [
   {
     id: 'live',
     title: '实时总览',
@@ -515,10 +568,28 @@ export const modulePages: ModulePageConfig[] = [
   },
 ]
 
+const spotlightModuleLayouts: Partial<Record<RawModulePageConfig['id'], ModulePageLayout>> = {
+  hotel: 'hotel',
+  commerce: 'commerce',
+  parking: 'parking',
+  source: 'source',
+}
+
+export const modulePages: ModulePageConfig[] = rawModulePages.map((page) => ({
+  ...page,
+  layout: spotlightModuleLayouts[page.id] ?? 'default',
+}))
+
 export const modulePageById = Object.fromEntries(modulePages.map((page) => [page.id, page])) as Record<string, ModulePageConfig>
+
+export const workspacePageById = Object.fromEntries(workspacePages.map((page) => [page.id, page])) as Record<WorkspacePageId, WorkspacePageConfig>
 
 export function findModulePageByPath(path: string) {
   return modulePages.find((page) => page.path === path)
+}
+
+export function findWorkspacePageByPath(path: string) {
+  return workspacePages.find((page) => page.path === path)
 }
 
 export function getModuleGroupItems(groupId: ModuleGroupId) {

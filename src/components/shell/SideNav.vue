@@ -17,7 +17,7 @@ import { computed } from 'vue'
 import { useRoute } from 'vue-router'
 
 import ThemeSwitcher from '@/components/business/ThemeSwitcher.vue'
-import { getModuleGroupItems, moduleGroups, type ModuleIcon } from '@/data/module-pages'
+import { getModuleGroupItems, moduleGroups, workspacePages, type ModuleIcon } from '@/data/module-pages'
 
 const route = useRoute()
 
@@ -42,6 +42,8 @@ const groups = moduleGroups.map((group) => ({
 }))
 
 const activePath = computed(() => route.path)
+
+const workspaceItems = workspacePages
 </script>
 
 <template>
@@ -52,6 +54,25 @@ const activePath = computed(() => route.path)
     </RouterLink>
 
     <nav class="quiet-scrollbar min-h-0 flex-1 space-y-5 overflow-y-auto pr-1">
+      <section>
+        <p class="mb-2 px-3 text-[13px] font-medium text-muted-foreground">核心工作区</p>
+        <div class="space-y-1">
+          <RouterLink
+            v-for="item in workspaceItems"
+            :key="item.path"
+            :to="item.path"
+            class="flex items-center gap-3 rounded-panel border px-3 py-2.5 text-[14px] transition"
+            :class="activePath === item.path ? 'border-lake/35 bg-mint text-ink' : 'border-transparent text-muted-foreground hover:border-border hover:bg-panel/80 hover:text-ink'"
+          >
+            <component :is="icons[item.icon]" class="h-4 w-4 shrink-0" :stroke-width="1.8" />
+            <div class="min-w-0">
+              <p class="truncate">{{ item.title }}</p>
+              <p class="truncate text-[12px] text-muted-foreground">{{ item.description }}</p>
+            </div>
+          </RouterLink>
+        </div>
+      </section>
+
       <section v-for="group in groups" :key="group.id">
         <p class="mb-2 px-3 text-[13px] font-medium text-muted-foreground">{{ group.label }}</p>
         <div class="space-y-1">

@@ -7,11 +7,20 @@ import { monitorSections } from '@/data/mock-monitor'
 <template>
   <div class="mx-auto max-w-[1480px] space-y-4">
     <header class="panel-line rounded-panel bg-panel p-4 sm:p-5">
-      <p class="text-[14px] text-muted-foreground">实时监控</p>
-      <h1 class="mt-1 text-[28px] font-medium text-ink sm:text-[34px]">分业态经营面板</h1>
-      <p class="mt-3 max-w-3xl text-[15px] leading-7 text-muted-foreground">
-        对标竞品的实时总览，但把酒店、票务、商业、停车和景区项目拆成更容易行动的经营片段。
-      </p>
+      <div class="grid gap-4 xl:grid-cols-[1.15fr_0.85fr] xl:items-end">
+        <div>
+          <p class="text-[14px] text-muted-foreground">实时监控</p>
+          <h1 class="mt-1 text-[28px] font-medium text-ink sm:text-[34px]">分业态经营面板</h1>
+          <p class="mt-3 max-w-3xl text-[15px] leading-7 text-muted-foreground">
+            对标竞品的实时总览，但把酒店、票务、商业、停车和景区项目拆成更容易行动的经营片段。
+          </p>
+        </div>
+
+        <div class="rounded-panel border border-line bg-muted/55 p-4 text-[14px] leading-7 text-ink">
+          <p class="font-medium">当前盯盘重点</p>
+          <p class="mt-2">酒店和停车承载仍安全，票务核销将在午后抬压，商业转化仍是当下最弱一环。</p>
+        </div>
+      </div>
     </header>
 
     <section class="grid gap-4 xl:grid-cols-3">
