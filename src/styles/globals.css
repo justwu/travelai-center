@@ -3,13 +3,150 @@
 @tailwind utilities;
 
 :root {
-  color: #1f2428;
-  background: #fbfaf6;
+  --color-background: 247 253 255;
+  --color-foreground: 21 27 34;
+  --color-muted: 233 247 250;
+  --color-muted-foreground: 55 70 82;
+  --color-border: 190 224 230;
+  --color-line: 219 236 240;
+  --color-lake: 22 157 144;
+  --color-aqua: 33 140 224;
+  --color-terracotta: 237 128 82;
+  --color-gold: 240 183 64;
+  --color-iris: 126 112 217;
+  --color-ink: 21 27 34;
+  --color-risk: 176 83 92;
+  --color-warning: 191 135 38;
+  --color-panel: 255 255 255;
+  --color-mint: 223 250 244;
+  --color-peach: 255 232 222;
+  --color-sky: 223 244 255;
+  --color-butter: 255 244 205;
+  --body-gradient-a: rgba(48, 196, 180, 0.22);
+  --body-gradient-b: rgba(89, 160, 255, 0.22);
+  --body-gradient-c: rgba(255, 191, 79, 0.18);
+  --body-gradient-base-1: #f7fdff;
+  --body-gradient-base-2: #fffdf8;
+  --body-gradient-base-3: #efffff;
+  color: rgb(var(--color-foreground));
+  background: rgb(var(--color-background));
   font-family: Inter, "SF Pro Display", "SF Pro Text", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+:root[data-theme="sunrise"] {
+  --color-background: 253 251 245;
+  --color-foreground: 31 36 40;
+  --color-muted: 240 245 238;
+  --color-muted-foreground: 69 82 77;
+  --color-border: 215 226 216;
+  --color-line: 228 234 223;
+  --color-lake: 47 125 104;
+  --color-aqua: 61 134 166;
+  --color-terracotta: 201 120 69;
+  --color-gold: 196 154 66;
+  --color-iris: 120 111 159;
+  --color-ink: 31 36 40;
+  --color-risk: 168 91 88;
+  --color-warning: 185 139 47;
+  --color-panel: 255 255 255;
+  --color-mint: 232 244 236;
+  --color-peach: 248 235 223;
+  --color-sky: 232 242 246;
+  --color-butter: 247 240 216;
+  --body-gradient-a: rgba(196, 154, 66, 0.16);
+  --body-gradient-b: rgba(61, 134, 166, 0.13);
+  --body-gradient-c: rgba(47, 125, 104, 0.14);
+  --body-gradient-base-1: #fffdf8;
+  --body-gradient-base-2: #fbfaf6;
+  --body-gradient-base-3: #f1f8f2;
+}
+
+:root[data-theme="cyber"] {
+  --color-background: 247 253 255;
+  --color-foreground: 21 27 34;
+  --color-muted: 233 247 250;
+  --color-muted-foreground: 55 70 82;
+  --color-border: 190 224 230;
+  --color-line: 219 236 240;
+  --color-lake: 22 157 144;
+  --color-aqua: 33 140 224;
+  --color-terracotta: 237 128 82;
+  --color-gold: 240 183 64;
+  --color-iris: 126 112 217;
+  --color-ink: 21 27 34;
+  --color-risk: 176 83 92;
+  --color-warning: 191 135 38;
+  --color-panel: 255 255 255;
+  --color-mint: 223 250 244;
+  --color-peach: 255 232 222;
+  --color-sky: 223 244 255;
+  --color-butter: 255 244 205;
+  --body-gradient-a: rgba(48, 196, 180, 0.22);
+  --body-gradient-b: rgba(89, 160, 255, 0.22);
+  --body-gradient-c: rgba(255, 191, 79, 0.18);
+  --body-gradient-base-1: #f7fdff;
+  --body-gradient-base-2: #fffdf8;
+  --body-gradient-base-3: #efffff;
+}
+
+:root[data-theme="resort"] {
+  --color-background: 255 250 244;
+  --color-foreground: 35 32 29;
+  --color-muted: 251 239 226;
+  --color-muted-foreground: 91 70 55;
+  --color-border: 232 209 186;
+  --color-line: 239 224 205;
+  --color-lake: 68 137 111;
+  --color-aqua: 76 148 173;
+  --color-terracotta: 205 105 62;
+  --color-gold: 211 156 58;
+  --color-iris: 139 111 154;
+  --color-ink: 35 32 29;
+  --color-risk: 166 83 74;
+  --color-warning: 183 126 44;
+  --color-panel: 255 255 255;
+  --color-mint: 232 244 232;
+  --color-peach: 255 232 215;
+  --color-sky: 229 245 247;
+  --color-butter: 255 241 202;
+  --body-gradient-a: rgba(205, 105, 62, 0.17);
+  --body-gradient-b: rgba(68, 137, 111, 0.15);
+  --body-gradient-c: rgba(211, 156, 58, 0.17);
+  --body-gradient-base-1: #fffaf4;
+  --body-gradient-base-2: #fffdf8;
+  --body-gradient-base-3: #f7fff4;
+}
+
+:root[data-theme="minimal"] {
+  --color-background: 248 250 248;
+  --color-foreground: 29 35 33;
+  --color-muted: 238 243 240;
+  --color-muted-foreground: 62 75 70;
+  --color-border: 211 222 216;
+  --color-line: 226 233 229;
+  --color-lake: 54 119 100;
+  --color-aqua: 67 124 150;
+  --color-terracotta: 177 112 75;
+  --color-gold: 178 144 68;
+  --color-iris: 111 105 142;
+  --color-ink: 29 35 33;
+  --color-risk: 155 82 82;
+  --color-warning: 165 124 50;
+  --color-panel: 255 255 255;
+  --color-mint: 231 240 235;
+  --color-peach: 246 234 226;
+  --color-sky: 231 240 244;
+  --color-butter: 246 240 220;
+  --body-gradient-a: rgba(54, 119, 100, 0.12);
+  --body-gradient-b: rgba(67, 124, 150, 0.10);
+  --body-gradient-c: rgba(178, 144, 68, 0.10);
+  --body-gradient-base-1: #fbfcfb;
+  --body-gradient-base-2: #f8faf8;
+  --body-gradient-base-3: #f2f7f4;
 }
 
 * {
@@ -21,9 +158,10 @@ body {
   min-height: 100vh;
   margin: 0;
   background:
-    radial-gradient(circle at 8% 0%, rgba(196, 154, 66, 0.16), transparent 26rem),
-    radial-gradient(circle at 82% 10%, rgba(61, 134, 166, 0.13), transparent 24rem),
-    linear-gradient(135deg, #fffdf8 0%, #fbfaf6 42%, #f1f8f2 100%);
+    radial-gradient(circle at 7% 0%, var(--body-gradient-a), transparent 28rem),
+    radial-gradient(circle at 88% 8%, var(--body-gradient-b), transparent 26rem),
+    radial-gradient(circle at 45% 100%, var(--body-gradient-c), transparent 28rem),
+    linear-gradient(135deg, var(--body-gradient-base-1) 0%, var(--body-gradient-base-2) 42%, var(--body-gradient-base-3) 100%);
 }
 
 button,
@@ -48,12 +186,12 @@ a {
 }
 
 .panel-line {
-  border: 1px solid #d7e2d8;
+  border: 1px solid rgb(var(--color-border));
 }
 
 .quiet-scrollbar {
   scrollbar-width: thin;
-  scrollbar-color: #bcc8bf transparent;
+  scrollbar-color: rgb(var(--color-border)) transparent;
 }
 
 .quiet-scrollbar::-webkit-scrollbar {
@@ -62,6 +200,6 @@ a {
 }
 
 .quiet-scrollbar::-webkit-scrollbar-thumb {
-  background: #bcc8bf;
+  background: rgb(var(--color-border));
   border-radius: 999px;
 }

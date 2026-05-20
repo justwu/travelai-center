@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
+import { modulePages } from '@/data/module-pages'
 import { sortMetricsByStatus, sortRisksByPriority } from '@/types/domain'
 
 describe('domain helpers', () => {
@@ -26,5 +27,23 @@ describe('domain helpers', () => {
     const sorted = sortMetricsByStatus(metrics)
 
     expect(sorted.map((item) => item.id)).toEqual(['risk', 'warning', 'normal'])
+  })
+
+  it('keeps module navigation aligned with the collected page folders', () => {
+    expect(modulePages.map((item) => item.title)).toEqual([
+      '实时总览',
+      '历史分析',
+      '节假日分析',
+      '预售分析',
+      '渠道销售分析',
+      '复盘分析',
+      '酒店分析',
+      '票务分析',
+      '商业分析',
+      '景区分析',
+      '停车场分析',
+      '客源分析',
+    ])
+    expect(new Set(modulePages.map((item) => item.path)).size).toBe(12)
   })
 })
