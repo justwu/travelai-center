@@ -112,10 +112,10 @@ describe('domain helpers', () => {
 
     expect(app.isAuthenticated).toBe(false)
 
-    app.login({ username: 'cw', password: '123', remember: true, now })
+    app.login({ username: 'Just', password: '123', remember: true, now })
 
     expect(app.isAuthenticated).toBe(true)
-    expect(app.currentUser?.username).toBe('cw')
+    expect(app.currentUser?.username).toBe('Just')
     expect(app.loginExpiresAt).toBe(now + 7 * 24 * 60 * 60 * 1000)
     expect(app.shouldRequireLogin(now + 6 * 24 * 60 * 60 * 1000)).toBe(false)
     expect(app.shouldRequireLogin(now + 7 * 24 * 60 * 60 * 1000 + 1)).toBe(true)
@@ -125,7 +125,7 @@ describe('domain helpers', () => {
     const now = new Date('2026-05-21T08:00:00+08:00').getTime()
     const app = useAppStore(createPinia())
 
-    app.login({ username: 'cw', password: '123', remember: false, now })
+    app.login({ username: 'Just', password: '123', remember: false, now })
 
     expect(app.isAuthenticated).toBe(true)
     expect(app.rememberLogin).toBe(false)
@@ -136,10 +136,19 @@ describe('domain helpers', () => {
     const now = new Date('2026-05-21T08:00:00+08:00').getTime()
     const app = useAppStore(createPinia())
 
-    app.login({ username: ' cw ', password: ' 123 ', remember: false, now })
+    app.login({ username: ' Just ', password: ' 123 ', remember: false, now })
 
     expect(app.isAuthenticated).toBe(true)
-    expect(app.currentUser?.username).toBe('cw')
+    expect(app.currentUser?.username).toBe('Just')
+  })
+
+  it('uses the Yintan resort project identity with Just as the demo user', () => {
+    const app = useAppStore(createPinia())
+
+    app.login({ username: 'Just', password: '123', remember: false })
+
+    expect(app.projectName).toBe('银滩旅游度假区')
+    expect(app.currentUser).toMatchObject({ username: 'Just', displayName: 'Just' })
   })
 
   it('exposes brand highlights for the upgraded login hero and app welcome header', () => {

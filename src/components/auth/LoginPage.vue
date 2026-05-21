@@ -6,7 +6,7 @@ import { useAppStore } from '@/stores/app'
 
 const app = useAppStore()
 
-const username = ref('cw')
+const username = ref('Just')
 const password = ref('123')
 const remember = ref(true)
 const errorMessage = ref('')
@@ -54,7 +54,7 @@ function submitLogin() {
         </div>
 
         <div class="mt-8 max-w-2xl">
-          <p class="text-[14px] tracking-[0.28em] text-muted-foreground">云境文旅度假区</p>
+          <p class="text-[14px] tracking-[0.28em] text-muted-foreground">银滩旅游度假区</p>
           <h1 class="mt-4 text-[34px] font-medium leading-tight text-ink sm:text-[44px] lg:text-[54px]">
             像科技公司首页一样的
             文旅经营中枢入口。
@@ -106,7 +106,7 @@ function submitLogin() {
 
           <div class="mt-6 rounded-[20px] border border-cyan-400/[0.18] bg-cyan-400/[0.08] p-4 text-[14px] leading-7 text-slate-200">
             <p class="font-medium text-white">演示账号</p>
-            <p class="mt-2">用户名：<span class="amount-font text-cyan-200">cw</span></p>
+            <p class="mt-2">用户名：<span class="amount-font text-cyan-200">Just</span></p>
             <p>密码：<span class="amount-font text-cyan-200">123</span></p>
           </div>
 

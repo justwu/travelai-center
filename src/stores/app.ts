@@ -28,7 +28,7 @@ interface RememberedAuthPayload {
 }
 
 const AUTH_STORAGE_KEY = 'travelai-auth'
-const AUTH_USERNAME = 'cw'
+const AUTH_USERNAME = 'Just'
 const AUTH_PASSWORD = '123'
 const SEVEN_DAYS_MS = 7 * 24 * 60 * 60 * 1000
 
@@ -51,7 +51,7 @@ function readStoredAuth(now: number): RememberedAuthPayload | null {
 
   try {
     const parsed = JSON.parse(raw) as RememberedAuthPayload
-    if (!parsed.remember || !parsed.expiresAt || parsed.expiresAt <= now) {
+    if (!parsed.remember || parsed.username !== AUTH_USERNAME || !parsed.expiresAt || parsed.expiresAt <= now) {
       window.localStorage.removeItem(AUTH_STORAGE_KEY)
       return null
     }
@@ -129,7 +129,7 @@ const initialAuthState = resolveInitialAuth(Date.now())
 
 export const useAppStore = defineStore('app', {
   state: () => ({
-    projectName: '云境文旅度假区',
+    projectName: '银滩旅游度假区',
     updatedAt: '2026-05-20 16:45',
     theme: resolveInitialTheme(),
     loginHighlights: [
@@ -189,7 +189,7 @@ export const useAppStore = defineStore('app', {
 
       const user: AuthUser = {
         username: AUTH_USERNAME,
-        displayName: '陈文',
+        displayName: 'Just',
         role: '运营负责人',
       }
 
