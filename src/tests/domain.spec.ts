@@ -132,6 +132,16 @@ describe('domain helpers', () => {
     expect(app.loginExpiresAt).toBe(null)
   })
 
+  it('accepts copied demo credentials with surrounding whitespace', () => {
+    const now = new Date('2026-05-21T08:00:00+08:00').getTime()
+    const app = useAppStore(createPinia())
+
+    app.login({ username: ' cw ', password: ' 123 ', remember: false, now })
+
+    expect(app.isAuthenticated).toBe(true)
+    expect(app.currentUser?.username).toBe('cw')
+  })
+
   it('exposes brand highlights for the upgraded login hero and app welcome header', () => {
     const app = useAppStore(createPinia())
 

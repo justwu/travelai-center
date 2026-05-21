@@ -34,7 +34,7 @@ function submitLogin() {
   errorMessage.value = ''
 
   try {
-    app.login({ username: username.value.trim(), password: password.value, remember: remember.value })
+    app.login({ username: username.value, password: password.value, remember: remember.value })
   }
   catch (error) {
     errorMessage.value = error instanceof Error ? error.message : '登录失败，请重试'
@@ -47,7 +47,7 @@ function submitLogin() {
     <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(47,114,200,0.14),transparent_24rem),radial-gradient(circle_at_85%_10%,rgba(99,91,255,0.16),transparent_22rem),radial-gradient(circle_at_50%_100%,rgba(0,212,255,0.09),transparent_28rem)]" />
 
     <div class="relative mx-auto flex min-h-[calc(100vh-3rem)] max-w-[1440px] flex-col justify-center lg:flex-row lg:items-stretch lg:gap-6">
-      <section class="flex-1 rounded-[28px] border border-white/60 bg-white/72 p-6 backdrop-blur md:p-8 lg:p-10">
+      <section class="flex-1 rounded-[28px] border border-white/60 bg-white/[0.72] p-6 backdrop-blur md:p-8 lg:p-10">
         <div class="inline-flex items-center gap-2 rounded-full border border-aqua/15 bg-sky/55 px-3 py-1 text-[13px] text-ink">
           <Sparkles class="h-4 w-4" :stroke-width="1.8" />
           <span>TravelAI Center Demo Access</span>
@@ -68,7 +68,7 @@ function submitLogin() {
           <article
             v-for="item in app.loginHighlights"
             :key="item.title"
-            class="rounded-[22px] border border-white/70 bg-white/78 px-4 py-4"
+            class="rounded-[22px] border border-white/70 bg-white/[0.78] px-4 py-4"
           >
             <p class="text-[15px] font-medium text-ink">{{ item.title }}</p>
             <p class="mt-2 text-[14px] leading-6 text-muted-foreground">{{ item.detail }}</p>
@@ -76,7 +76,7 @@ function submitLogin() {
         </div>
 
         <div class="mt-10 grid gap-3 sm:grid-cols-3">
-          <article v-for="item in heroStats" :key="item.label" class="rounded-[22px] border border-white/70 bg-white/78 px-4 py-4">
+          <article v-for="item in heroStats" :key="item.label" class="rounded-[22px] border border-white/70 bg-white/[0.78] px-4 py-4">
             <p class="text-[13px] text-muted-foreground">{{ item.label }}</p>
             <p class="amount-font mt-3 text-[28px] font-medium text-ink">{{ item.value }}</p>
           </article>
@@ -92,8 +92,8 @@ function submitLogin() {
         </div>
       </section>
 
-      <section class="mt-4 w-full shrink-0 rounded-[28px] border border-slate-200/80 bg-slate-950/92 p-5 text-slate-100 shadow-[0_24px_80px_rgba(15,23,42,0.22)] backdrop-blur lg:mt-0 lg:w-[440px] lg:p-6">
-        <div class="rounded-[24px] border border-white/10 bg-white/5 p-5">
+      <section class="mt-4 w-full shrink-0 rounded-[28px] border border-slate-200/80 bg-slate-950/[0.92] p-5 text-slate-100 shadow-[0_24px_80px_rgba(15,23,42,0.22)] backdrop-blur lg:mt-0 lg:w-[440px] lg:p-6">
+        <div class="rounded-[24px] border border-white/10 bg-white/[0.05] p-5">
           <div class="flex items-center gap-3">
             <div class="flex h-11 w-11 items-center justify-center rounded-2xl bg-cyan-400/12 text-cyan-200">
               <ShieldCheck class="h-5 w-5" :stroke-width="1.8" />
@@ -104,7 +104,7 @@ function submitLogin() {
             </div>
           </div>
 
-          <div class="mt-6 rounded-[20px] border border-cyan-400/18 bg-cyan-400/8 p-4 text-[14px] leading-7 text-slate-200">
+          <div class="mt-6 rounded-[20px] border border-cyan-400/[0.18] bg-cyan-400/[0.08] p-4 text-[14px] leading-7 text-slate-200">
             <p class="font-medium text-white">演示账号</p>
             <p class="mt-2">用户名：<span class="amount-font text-cyan-200">cw</span></p>
             <p>密码：<span class="amount-font text-cyan-200">123</span></p>
@@ -119,7 +119,7 @@ function submitLogin() {
                 v-model="username"
                 type="text"
                 autocomplete="username"
-                class="w-full rounded-[18px] border border-white/10 bg-white/6 px-4 py-3 text-[15px] text-white outline-none transition placeholder:text-slate-500 focus:border-cyan-300/55 focus:bg-white/10"
+                class="w-full rounded-[18px] border border-slate-200 bg-white px-4 py-3 text-[15px] text-slate-950 shadow-[inset_0_1px_0_rgba(15,23,42,0.04)] outline-none transition placeholder:text-slate-500 focus:border-cyan-300 focus:ring-4 focus:ring-cyan-300/[0.18]"
                 placeholder="输入用户名"
               />
             </label>
@@ -132,20 +132,20 @@ function submitLogin() {
                 v-model="password"
                 type="password"
                 autocomplete="current-password"
-                class="w-full rounded-[18px] border border-white/10 bg-white/6 px-4 py-3 text-[15px] text-white outline-none transition placeholder:text-slate-500 focus:border-cyan-300/55 focus:bg-white/10"
+                class="w-full rounded-[18px] border border-slate-200 bg-white px-4 py-3 text-[15px] text-slate-950 shadow-[inset_0_1px_0_rgba(15,23,42,0.04)] outline-none transition placeholder:text-slate-500 focus:border-cyan-300 focus:ring-4 focus:ring-cyan-300/[0.18]"
                 placeholder="输入密码"
               />
             </label>
 
-            <label class="flex items-start gap-3 rounded-[18px] border border-white/8 bg-white/4 px-4 py-3 text-[14px] text-slate-300">
-              <input v-model="remember" type="checkbox" class="mt-1 h-4 w-4 rounded border-white/20 bg-transparent text-cyan-300" />
+            <label class="flex items-start gap-3 rounded-[18px] border border-white/[0.08] bg-white/[0.04] px-4 py-3 text-[14px] text-slate-300">
+              <input v-model="remember" type="checkbox" class="mt-1 h-4 w-4 rounded border-white/20 bg-slate-950 text-cyan-300" />
               <span>
                 <span class="block text-white">记住密码</span>
                 <span class="mt-1 block text-[13px] text-slate-400">{{ expiresHint }}</span>
               </span>
             </label>
 
-            <p v-if="errorMessage" class="rounded-[16px] border border-rose-300/18 bg-rose-400/10 px-4 py-3 text-[13px] text-rose-200">
+            <p v-if="errorMessage" class="rounded-[16px] border border-rose-300/[0.18] bg-rose-400/10 px-4 py-3 text-[13px] text-rose-100">
               {{ errorMessage }}
             </p>
 
@@ -157,7 +157,7 @@ function submitLogin() {
             </button>
           </form>
 
-          <div class="mt-6 rounded-[20px] border border-white/8 bg-white/4 p-4 text-[13px] leading-6 text-slate-400">
+          <div class="mt-6 rounded-[20px] border border-white/[0.08] bg-white/[0.04] p-4 text-[13px] leading-6 text-slate-400">
             <p>未勾选“记住密码”时，本次仅保留临时登录态。</p>
             <p>勾选后登录态写入浏览器缓存，7 天后自动失效并要求重新输入。</p>
           </div>

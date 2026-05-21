@@ -180,7 +180,10 @@ export const useAppStore = defineStore('app', {
       this.loginExpiresAt = remembered.expiresAt
     },
     login({ username, password, remember, now = Date.now() }: { username: string; password: string; remember: boolean; now?: number }) {
-      if (username !== AUTH_USERNAME || password !== AUTH_PASSWORD) {
+      const normalizedUsername = username.trim()
+      const normalizedPassword = password.trim()
+
+      if (normalizedUsername !== AUTH_USERNAME || normalizedPassword !== AUTH_PASSWORD) {
         throw new Error('账号或密码错误')
       }
 
