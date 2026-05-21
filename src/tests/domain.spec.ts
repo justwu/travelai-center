@@ -131,4 +131,12 @@ describe('domain helpers', () => {
     expect(app.rememberLogin).toBe(false)
     expect(app.loginExpiresAt).toBe(null)
   })
+
+  it('exposes brand highlights for the upgraded login hero and app welcome header', () => {
+    const app = useAppStore(createPinia())
+
+    expect(app.loginHighlights).toHaveLength(4)
+    expect(app.dashboardWelcomeCards).toHaveLength(3)
+    expect(app.loginHighlights[0].title).toContain('AI')
+  })
 })

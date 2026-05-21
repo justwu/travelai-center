@@ -61,6 +61,7 @@ function logout() {
         <div class="flex items-center gap-3">
           <div class="h-11 w-11 rounded-2xl bg-[radial-gradient(circle_at_30%_30%,rgba(86,201,255,0.9),rgba(91,124,255,0.9)_55%,rgba(125,109,255,0.85)_100%)]" />
           <div class="min-w-0">
+            <div class="text-[11px] uppercase tracking-[0.22em] text-muted-foreground">Active Project</div>
             <div class="truncate text-[18px] font-medium tracking-[0] text-ink">{{ app.projectName }}</div>
             <div class="mt-1 text-[13px] text-muted-foreground">文旅经营中枢 · Demo</div>
           </div>

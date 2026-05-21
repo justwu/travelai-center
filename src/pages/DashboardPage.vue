@@ -13,6 +13,28 @@ const app = useAppStore()
 
 <template>
   <div class="mx-auto max-w-[1480px] space-y-4">
+    <section class="panel-line overflow-hidden rounded-[28px] bg-[linear-gradient(135deg,rgba(255,255,255,0.92),rgba(237,241,255,0.92)_48%,rgba(229,245,247,0.88)_100%)] px-5 py-5 sm:px-6 sm:py-6">
+      <div class="grid gap-5 xl:grid-cols-[1.15fr_0.85fr] xl:items-end">
+        <div>
+          <p class="text-[13px] uppercase tracking-[0.22em] text-muted-foreground">Welcome Back</p>
+          <h1 class="mt-3 text-[30px] font-medium leading-tight text-ink sm:text-[40px]">
+            {{ app.currentUser?.displayName }}，今天先从经营判断开始。
+          </h1>
+          <p class="mt-4 max-w-3xl text-[15px] leading-7 text-muted-foreground">
+            当前系统已经把停车、票务、住宿和商业数据汇总到一个工作台里，你可以直接用这页做晨会判断、值班巡检和客户演示。
+          </p>
+        </div>
+
+        <div class="grid gap-3 sm:grid-cols-3 xl:grid-cols-1">
+          <article v-for="card in app.dashboardWelcomeCards" :key="card.label" class="rounded-[22px] border border-white/75 bg-white/72 px-4 py-4">
+            <p class="text-[13px] text-muted-foreground">{{ card.label }}</p>
+            <p class="mt-2 amount-font text-[24px] font-medium text-ink">{{ card.value }}</p>
+            <p class="mt-2 text-[13px] leading-5 text-muted-foreground">{{ card.detail }}</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <ProjectStatusBar :project-name="app.projectName" :updated-at="app.updatedAt" />
 
     <section class="grid gap-4 xl:grid-cols-[1.15fr_0.85fr]">

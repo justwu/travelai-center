@@ -11,16 +11,21 @@ const password = ref('123')
 const remember = ref(true)
 const errorMessage = ref('')
 
-const featurePills = [
-  '景区、酒店、票务、商业统一驾驶舱',
-  '实时经营判断与复盘输出一体化',
-  '7 天记住登录，适合演示和值班切换',
-]
-
 const heroStats = [
   { label: '响应主题', value: '8 套' },
   { label: '核心工作区', value: '4 个' },
   { label: '专题模块', value: '12 页' },
+]
+
+const spotlightBlocks = [
+  {
+    title: '今日经营节拍',
+    lines: ['酒店与停车承载安全', '票务会在午后抬压', '商业转化需要立即处理'],
+  },
+  {
+    title: '演示重点',
+    lines: ['从登录页进入产品级工作台', '支持 PC 与移动端自适应', '适合客户演示与值班联调'],
+  },
 ]
 
 const expiresHint = computed(() => remember.value ? '勾选后 7 天内免登录' : '关闭后刷新页面需重新输入')
@@ -59,16 +64,30 @@ function submitLogin() {
           </p>
         </div>
 
-        <div class="mt-8 flex flex-wrap gap-2">
-          <span v-for="pill in featurePills" :key="pill" class="rounded-full border border-border bg-panel/80 px-3 py-2 text-[13px] text-muted-foreground">
-            {{ pill }}
-          </span>
+        <div class="mt-8 grid gap-3 lg:grid-cols-[1.15fr_0.85fr]">
+          <article
+            v-for="item in app.loginHighlights"
+            :key="item.title"
+            class="rounded-[22px] border border-white/70 bg-white/78 px-4 py-4"
+          >
+            <p class="text-[15px] font-medium text-ink">{{ item.title }}</p>
+            <p class="mt-2 text-[14px] leading-6 text-muted-foreground">{{ item.detail }}</p>
+          </article>
         </div>
 
         <div class="mt-10 grid gap-3 sm:grid-cols-3">
           <article v-for="item in heroStats" :key="item.label" class="rounded-[22px] border border-white/70 bg-white/78 px-4 py-4">
             <p class="text-[13px] text-muted-foreground">{{ item.label }}</p>
             <p class="amount-font mt-3 text-[28px] font-medium text-ink">{{ item.value }}</p>
+          </article>
+        </div>
+
+        <div class="mt-8 grid gap-3 sm:grid-cols-2">
+          <article v-for="block in spotlightBlocks" :key="block.title" class="rounded-[24px] border border-white/70 bg-[linear-gradient(135deg,rgba(255,255,255,0.84),rgba(237,241,255,0.92))] px-5 py-4">
+            <p class="text-[15px] font-medium text-ink">{{ block.title }}</p>
+            <div class="mt-3 space-y-2 text-[14px] text-muted-foreground">
+              <p v-for="line in block.lines" :key="line">{{ line }}</p>
+            </div>
           </article>
         </div>
       </section>

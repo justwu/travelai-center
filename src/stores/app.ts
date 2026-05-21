@@ -8,6 +8,17 @@ export interface AuthUser {
   role: string
 }
 
+export interface BrandHighlight {
+  title: string
+  detail: string
+}
+
+export interface WelcomeCard {
+  label: string
+  value: string
+  detail: string
+}
+
 interface RememberedAuthPayload {
   username: string
   displayName: string
@@ -121,6 +132,17 @@ export const useAppStore = defineStore('app', {
     projectName: '云境文旅度假区',
     updatedAt: '2026-05-20 16:45',
     theme: resolveInitialTheme(),
+    loginHighlights: [
+      { title: 'AI 经营判断', detail: '把景区、票务、酒店和商业统一放进一套经营驾驶舱。' },
+      { title: '实时决策协同', detail: '异常发现、处理动作、复盘结论都能放在一个产品流程里。' },
+      { title: '多端自适应演示', detail: '桌面端是完整工作台，移动端是轻值班视图。' },
+      { title: '安全演示登录', detail: '支持 7 天记住密码，方便客户演示和内部联调。' },
+    ] as BrandHighlight[],
+    dashboardWelcomeCards: [
+      { label: '今日策略', value: '商业补强', detail: '优先补齐二消转化与店铺营业状态。' },
+      { label: '现场状态', value: '承载安全', detail: '停车和住宿承载仍在安全区间。' },
+      { label: '会议模式', value: '晨会版', detail: '当前信息结构适合做值班和经营晨会演示。' },
+    ] as WelcomeCard[],
     currentUser: initialAuthState.currentUser,
     isAuthenticated: initialAuthState.isAuthenticated,
     rememberLogin: initialAuthState.rememberLogin,
