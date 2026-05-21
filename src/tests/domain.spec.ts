@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { createPinia } from 'pinia'
 
-import { monitorSections } from '@/data/mock-monitor'
+import { monitorCommandMetrics, monitorFocusItems, monitorSections } from '@/data/mock-monitor'
 import { mobileWorkspacePages, modulePageById, modulePages, workspacePages } from '@/data/module-pages'
 import { routes } from '@/router'
 import { themeOptions, useAppStore } from '@/stores/app'
@@ -73,6 +73,14 @@ describe('domain helpers', () => {
 
   it('covers five realtime monitor panes including parking and scenic operations', () => {
     expect(monitorSections.map((item) => item.id)).toEqual(['hotel', 'ticket', 'business', 'parking', 'scenic'])
+  })
+
+  it('keeps realtime monitor data dense enough for an operations cockpit', () => {
+    expect(monitorCommandMetrics).toHaveLength(5)
+    expect(monitorFocusItems).toHaveLength(3)
+    expect(monitorSections.every((item) => item.stats.length >= 4)).toBe(true)
+    expect(monitorSections.every((item) => item.rows.length >= 3)).toBe(true)
+    expect(monitorSections.every((item) => item.signals.length >= 3)).toBe(true)
   })
 
   it('does not expose competitor place names in product-facing module content', () => {
