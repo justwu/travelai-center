@@ -105,4 +105,30 @@ describe('domain helpers', () => {
     ])
     expect(app.theme).toBe('cambridge')
   })
+
+  it('persists remembered login for seven days and expires after the deadline', () => {
+    const now = new Date('2026-05-21T08:00:00+08:00').getTime()
+    const app = useAppStore(createPinia())
+
+    expect(app.isAuthenticated).toBe(false)
+
+    app.login({ username: 'cw', password: '123', remember: true, now })
+
+    expect(app.isAuthenticated).toBe(true)
+    expect(app.currentUser?.username).toBe('cw')
+    expect(app.loginExpiresAt).toBe(now + 7 * 24 * 60 * 60 * 1000)
+    expect(app.shouldRequireLogin(now + 6 * 24 * 60 * 60 * 1000)).toBe(false)
+    expect(app.shouldRequireLogin(now + 7 * 24 * 60 * 60 * 1000 + 1)).toBe(true)
+  })
+
+  it('does not retain password when remember login is unchecked', () => {
+    const now = new Date('2026-05-21T08:00:00+08:00').getTime()
+    const app = useAppStore(createPinia())
+
+    app.login({ username: 'cw', password: '123', remember: false, now })
+
+    expect(app.isAuthenticated).toBe(true)
+    expect(app.rememberLogin).toBe(false)
+    expect(app.loginExpiresAt).toBe(null)
+  })
 })
