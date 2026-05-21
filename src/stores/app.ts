@@ -3,6 +3,7 @@ import { defineStore } from 'pinia'
 export type AppTheme = 'cambridge' | 'deepBlue' | 'violetNight' | 'greenNight' | 'sunsetSand' | 'coralDawn' | 'stripeCrystal' | 'mintBlue'
 
 export interface AuthUser {
+  accountId: string
   username: string
   displayName: string
   role: string
@@ -20,6 +21,7 @@ export interface WelcomeCard {
 }
 
 interface RememberedAuthPayload {
+  accountId?: string
   username: string
   displayName: string
   role: string
@@ -28,7 +30,8 @@ interface RememberedAuthPayload {
 }
 
 const AUTH_STORAGE_KEY = 'travelai-auth'
-const AUTH_USERNAME = 'Just'
+const AUTH_ACCOUNT_ID = 'cw'
+const AUTH_DISPLAY_NAME = 'Just'
 const AUTH_PASSWORD = '123'
 const SEVEN_DAYS_MS = 7 * 24 * 60 * 60 * 1000
 
@@ -51,7 +54,8 @@ function readStoredAuth(now: number): RememberedAuthPayload | null {
 
   try {
     const parsed = JSON.parse(raw) as RememberedAuthPayload
-    if (!parsed.remember || parsed.username !== AUTH_USERNAME || !parsed.expiresAt || parsed.expiresAt <= now) {
+    const accountId = parsed.accountId ?? parsed.username
+    if (!parsed.remember || accountId !== AUTH_ACCOUNT_ID || !parsed.expiresAt || parsed.expiresAt <= now) {
       window.localStorage.removeItem(AUTH_STORAGE_KEY)
       return null
     }
@@ -85,7 +89,8 @@ function resolveInitialAuth(now: number) {
 
   return {
     currentUser: {
-      username: remembered.username,
+      accountId: remembered.accountId ?? remembered.username,
+      username: remembered.displayName,
       displayName: remembered.displayName,
       role: remembered.role,
     },
@@ -109,6 +114,7 @@ function persistAuth(user: AuthUser, remember: boolean, now: number) {
 
   const expiresAt = now + SEVEN_DAYS_MS
   const payload: RememberedAuthPayload = {
+    accountId: user.accountId,
     username: user.username,
     displayName: user.displayName,
     role: user.role,
@@ -171,7 +177,8 @@ export const useAppStore = defineStore('app', {
       }
 
       this.currentUser = {
-        username: remembered.username,
+        accountId: remembered.accountId ?? remembered.username,
+        username: remembered.displayName,
         displayName: remembered.displayName,
         role: remembered.role,
       }
@@ -183,13 +190,14 @@ export const useAppStore = defineStore('app', {
       const normalizedUsername = username.trim()
       const normalizedPassword = password.trim()
 
-      if (normalizedUsername !== AUTH_USERNAME || normalizedPassword !== AUTH_PASSWORD) {
+      if (normalizedUsername !== AUTH_ACCOUNT_ID || normalizedPassword !== AUTH_PASSWORD) {
         throw new Error('账号或密码错误')
       }
 
       const user: AuthUser = {
-        username: AUTH_USERNAME,
-        displayName: 'Just',
+        accountId: AUTH_ACCOUNT_ID,
+        username: AUTH_DISPLAY_NAME,
+        displayName: AUTH_DISPLAY_NAME,
         role: '运营负责人',
       }
 
